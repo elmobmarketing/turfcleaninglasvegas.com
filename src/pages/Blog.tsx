@@ -126,7 +126,6 @@ export function Blog() {
                       <span className="bg-gradient-to-r from-turf to-turf-light text-white text-xs font-bold px-3 py-1.5 rounded-full">
                         Complete Guide
                       </span>
-                      <span className="text-gray-400 text-sm">{pillarPost.readTime} min read</span>
                     </div>
                     <h2 className="text-2xl md:text-3xl font-black text-midnight mb-4 group-hover:text-turf transition-colors">
                       {pillarPost.title}
@@ -205,7 +204,6 @@ export function Blog() {
                       <span className="text-turf text-xs font-bold uppercase tracking-wider">
                         {blogCategories[post.category].label}
                       </span>
-                      <span className="text-gray-400 text-xs">{post.readTime} min read</span>
                     </div>
                     <h3 className="text-lg font-bold text-midnight mb-2 group-hover:text-turf transition-colors line-clamp-2">
                       {post.title}

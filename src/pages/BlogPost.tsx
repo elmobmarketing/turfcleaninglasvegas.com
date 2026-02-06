@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { getBlogPost, getRelatedPosts, blogCategories } from '../data/blog';
+import { getBlogPost, getRelatedPosts, blogCategories, blogPosts, getSectionImage } from '../data/blog';
 import { PHONE_NUMBER, PHONE_HREF } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
@@ -75,6 +75,7 @@ export function BlogPost() {
 
   if (!post) return <Navigate to="/blog" replace />;
 
+  const postIndex = blogPosts.indexOf(post);
   const tocItems = post.sections.filter((s) => s.level === 'h2');
   const midPoint = Math.min(3, Math.floor(post.sections.length / 2));
 
@@ -138,12 +139,6 @@ export function BlogPost() {
                   </svg>
                   {new Date(post.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </span>
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {post.readTime} min read
-                </span>
               </div>
             </motion.div>
           </div>
@@ -206,6 +201,23 @@ export function BlogPost() {
                       <h3 className="text-xl md:text-2xl font-bold text-midnight mt-8 mb-3">
                         {section.heading}
                       </h3>
+                    )}
+
+                    {section.level === 'h2' && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.97 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="rounded-2xl overflow-hidden my-6"
+                      >
+                        <img
+                          src={getSectionImage(postIndex, index)}
+                          alt={section.heading}
+                          className="w-full aspect-[16/9] object-cover"
+                          loading="lazy"
+                        />
+                      </motion.div>
                     )}
 
                     {section.content.map((paragraph, pIdx) => (

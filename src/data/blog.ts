@@ -22,7 +22,7 @@ export interface BlogPost {
   updatedDate?: string;
   category: BlogCategory;
   tags: string[];
-  readTime: number;
+
   isPillar: boolean;
   sections: BlogSection[];
   relatedSlugs: string[];
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: "2026-02-06",
   category: "maintenance",
   tags: ["artificial turf cleaning", "las vegas", "turf maintenance", "how to clean artificial turf", "synthetic grass care"],
-  readTime: 22,
+
   isPillar: true,
   sections: [
     {
@@ -305,7 +305,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: "2026-02-06",
   category: "pet-care",
   tags: ["pet urine odor", "artificial turf", "dog urine smell", "odor removal", "pet-safe cleaning"],
-  readTime: 17,
+
   isPillar: false,
   sections: [
     {
@@ -478,7 +478,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: '2026-02-06',
   category: 'maintenance',
   tags: ['artificial turf problems', 'turf repair', 'las vegas', 'artificial grass issues', 'turf solutions'],
-  readTime: 20,
+
   isPillar: false,
   sections: [
     {
@@ -763,7 +763,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: '2026-02-06',
   category: 'cost',
   tags: ['turf cleaning cost', 'artificial turf price', 'las vegas turf cleaning', 'cleaning cost guide', 'turf maintenance cost'],
-  readTime: 17,
+
   isPillar: false,
   sections: [
     {
@@ -946,7 +946,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: '2026-02-06',
   category: 'comparison',
   tags: ['artificial turf vs grass', 'turf cost comparison', 'las vegas landscaping', 'water savings', 'SNWA rebate'],
-  readTime: 17,
+
   isPillar: false,
   sections: [
     {
@@ -1114,7 +1114,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: '2026-02-06',
   category: 'maintenance',
   tags: ['turf maintenance calendar', 'seasonal turf care', 'las vegas turf schedule', 'monthly maintenance', 'artificial turf upkeep'],
-  readTime: 20,
+
   isPillar: false,
   sections: [
     {
@@ -1415,7 +1415,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: '2026-02-06',
   category: 'cost',
   tags: ['DIY turf cleaning', 'professional turf cleaning', 'turf cleaning comparison', 'las vegas homeowner', 'turf maintenance'],
-  readTime: 15,
+
   isPillar: false,
   sections: [
     {
@@ -1592,7 +1592,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: '2026-02-06',
   category: 'desert-climate',
   tags: ['las vegas heat', 'artificial turf heat damage', 'turf cooling', 'UV protection', 'desert turf care'],
-  readTime: 15,
+
   isPillar: false,
   sections: [
     {
@@ -1767,7 +1767,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: '2026-02-06',
   category: 'pet-care',
   tags: ['pet safe turf cleaner', 'artificial grass cleaner', 'dog turf products', 'turf cleaning products', 'eco-friendly turf cleaner'],
-  readTime: 15,
+
   isPillar: false,
   sections: [
     {
@@ -1961,7 +1961,7 @@ export const blogPosts: BlogPost[] = [
   publishDate: '2026-02-06',
   category: 'commercial',
   tags: ['commercial turf maintenance', 'HOA turf cleaning', 'business turf care', 'las vegas commercial', 'facility maintenance'],
-  readTime: 15,
+
   isPillar: false,
   sections: [
     {
@@ -2147,6 +2147,30 @@ export const blogPosts: BlogPost[] = [
     }
   ]
 }];
+
+const sectionImages = [
+  '/images/turf/backyard-curved-patio.webp',
+  '/images/turf/turf-pool-area.webp',
+  '/images/turf/desert-landscape-turf.webp',
+  '/images/turf/putting-green-palms.webp',
+  '/images/turf/side-yard-turf.webp',
+  '/images/turf/turf-closeup-wall.webp',
+  '/images/turf/turf-sports-net.webp',
+  '/images/turf/upscale-backyard-patio.webp',
+  '/images/turf/backyard-gravel-border.webp',
+  '/images/turf/family-backyard-swingset.webp',
+  '/images/turf/turf-pergola-desert.webp',
+  '/images/turf/backyard-palm-trees.webp',
+  '/images/turf/putting-green-pool.webp',
+  '/images/turf/turf-stone-pavers.webp',
+  '/images/turf/turf-ground-level.webp',
+  '/images/turf/putting-green-flag.webp',
+  '/images/turf/hero-turf-closeup.webp',
+];
+
+export function getSectionImage(postIndex: number, sectionIndex: number): string {
+  return sectionImages[(postIndex * 7 + sectionIndex * 3) % sectionImages.length];
+}
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
