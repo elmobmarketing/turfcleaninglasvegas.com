@@ -103,7 +103,7 @@ export function Logo({ variant = 'full', className = '', dark = false }: LogoPro
           className="text-[9.5px] font-semibold tracking-[0.18em] uppercase mt-[3px]"
           style={{ color: mutedColor }}
         >
-          Las Vegas, NV
+          Las Vegas
         </span>
       </div>
     </div>
