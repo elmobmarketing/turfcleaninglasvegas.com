@@ -56,7 +56,7 @@ export function Contact() {
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-turf/5 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-turf/5 rounded-full blur-3xl" />
 
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
