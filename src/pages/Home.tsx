@@ -98,14 +98,14 @@ export function Home() {
               </motion.div>
 
               <h1 className="heading-display text-white mb-6">
-                Your Turf,{' '}
-                <span className="text-gradient-light">Revived.</span>
+                Fresh Turf,{' '}
+                <span className="text-gradient-light">Zero Odor.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg">
-                Professional artificial grass cleaning built for the Las Vegas
-                desert. We eliminate pet odors, remove bacteria, and restore
-                your turf to look and feel like new.
+                Las Vegas pet owners trust us to eliminate odors, kill bacteria,
+                and bring their artificial grass back to life. Eco-friendly
+                products, same-day service, real results.
               </p>
 
               {/* Trust chips */}
