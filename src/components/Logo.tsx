@@ -6,75 +6,95 @@ interface LogoProps {
 
 export function Logo({ variant = 'full', className = '', dark = false }: LogoProps) {
   const textColor = dark ? '#ffffff' : '#0a0f1a';
-  const subColor = dark ? '#10b981' : '#059669';
-  const mutedColor = dark ? 'rgba(255,255,255,0.45)' : '#9ca3af';
+  const accentColor = '#059669';
+  const mutedColor = dark ? 'rgba(255,255,255,0.4)' : '#94a3b8';
+
+  // Unique IDs to avoid SVG gradient conflicts when multiple logos render
+  const uid = dark ? 'd' : 'l';
 
   const mark = (
     <svg
-      viewBox="0 0 48 48"
+      viewBox="0 0 52 52"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={variant === 'mark' ? className || 'w-10 h-10' : 'w-10 h-10'}
     >
       <defs>
-        <linearGradient id="logoBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+        <linearGradient id={`bg${uid}`} x1="4" y1="4" x2="48" y2="48" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="#047857" />
-          <stop offset="50%" stopColor="#059669" />
           <stop offset="100%" stopColor="#10b981" />
         </linearGradient>
-        <linearGradient id="logoShine" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="white" stopOpacity="0.18" />
-          <stop offset="50%" stopColor="white" stopOpacity="0" />
+        <linearGradient id={`bl${uid}`} x1="26" y1="8" x2="26" y2="40" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="white" />
+          <stop offset="100%" stopColor="rgba(255,255,255,0.65)" />
         </linearGradient>
-        <linearGradient id="bladeGrad" x1="24" y1="12" x2="24" y2="36" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="white" stopOpacity="1" />
-          <stop offset="100%" stopColor="white" stopOpacity="0.7" />
-        </linearGradient>
+        <filter id={`glow${uid}`}>
+          <feGaussianBlur stdDeviation="1.5" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
       </defs>
 
-      {/* Background with rounded corners */}
-      <rect width="48" height="48" rx="13" fill="url(#logoBg)" />
-      <rect width="48" height="48" rx="13" fill="url(#logoShine)" />
-
-      {/* Three grass blades - elegant tapered shapes */}
-      {/* Left blade - curves left */}
+      {/* Shield shape - distinctive, not a boring square */}
       <path
-        d="M16 36 C16 36, 14.5 28, 13 22 C12 18, 11 15, 13 12 C14.5 15, 15 19, 15.5 24 C16 28, 16 33, 16 36Z"
-        fill="url(#bladeGrad)"
+        d="M26 2 C26 2, 46 6, 48 10 C50 14, 50 30, 46 38 C42 46, 26 50, 26 50 C26 50, 10 46, 6 38 C2 30, 2 14, 4 10 C6 6, 26 2, 26 2Z"
+        fill={`url(#bg${uid})`}
       />
-
-      {/* Center blade - tallest, straight */}
+      {/* Inner highlight */}
       <path
-        d="M24 36 C24 36, 23.5 28, 23 21 C22.5 16, 23 11, 24 8 C25 11, 25.5 16, 25 21 C24.5 28, 24 36, 24 36Z"
+        d="M26 2 C26 2, 46 6, 48 10 C50 14, 50 30, 46 38 C42 46, 26 50, 26 50 C26 50, 10 46, 6 38 C2 30, 2 14, 4 10 C6 6, 26 2, 26 2Z"
         fill="white"
+        opacity="0.08"
       />
 
-      {/* Right blade - curves right */}
+      {/* Left blade - leans left with natural curve */}
       <path
-        d="M32 36 C32 36, 33.5 28, 35 22 C36 18, 37 15, 35 12 C33.5 15, 33 19, 32.5 24 C32 28, 32 33, 32 36Z"
-        fill="url(#bladeGrad)"
+        d="M18 40 C18 38, 16 30, 14 24 C12.5 19, 10.5 14, 12 10 C13 13, 14 17, 15 22 C16.5 28, 18 35, 18.5 40Z"
+        fill={`url(#bl${uid})`}
+        opacity="0.85"
       />
 
-      {/* Clean sweep arc - represents cleaning action */}
+      {/* Center blade - tallest, proud */}
       <path
-        d="M10 30 C14 24, 20 20, 28 19 C32 18.5, 36 19.5, 38 21"
+        d="M25 40 C25 38, 24 28, 24 20 C24 15, 24.5 9, 26 5 C27 9, 27.5 15, 27.5 20 C27.5 28, 27 38, 27 40Z"
+        fill="white"
+        opacity="0.95"
+      />
+
+      {/* Right blade - leans right */}
+      <path
+        d="M34 40 C34 38, 36 30, 38 24 C39.5 19, 41.5 14, 40 10 C39 13, 38 17, 37 22 C35.5 28, 34 35, 33.5 40Z"
+        fill={`url(#bl${uid})`}
+        opacity="0.85"
+      />
+
+      {/* Dynamic cleaning swoosh - the key differentiator */}
+      <path
+        d="M8 32 Q18 18, 32 16 Q40 15, 44 18"
         stroke="white"
-        strokeWidth="2"
+        strokeWidth="2.5"
         strokeLinecap="round"
         fill="none"
-        opacity="0.6"
+        opacity="0.7"
+        filter={`url(#glow${uid})`}
       />
 
-      {/* Sparkle - top right */}
-      <g opacity="0.9">
-        <line x1="37" y1="8" x2="37" y2="14" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="34" y1="11" x2="40" y2="11" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+      {/* 4-point sparkle star - top right, the "clean" symbol */}
+      <g transform="translate(39, 9)" opacity="0.95" filter={`url(#glow${uid})`}>
+        <path
+          d="M0 -5 C0.8 -1.5, 1.5 -0.8, 5 0 C1.5 0.8, 0.8 1.5, 0 5 C-0.8 1.5, -1.5 0.8, -5 0 C-1.5 -0.8, -0.8 -1.5, 0 -5Z"
+          fill="white"
+        />
       </g>
 
-      {/* Small sparkle */}
-      <g opacity="0.5">
-        <line x1="9" y1="10" x2="9" y2="14" stroke="white" strokeWidth="1" strokeLinecap="round" />
-        <line x1="7" y1="12" x2="11" y2="12" stroke="white" strokeWidth="1" strokeLinecap="round" />
+      {/* Tiny sparkle - left side */}
+      <g transform="translate(9, 15)" opacity="0.5">
+        <path
+          d="M0 -3 C0.5 -1, 1 -0.5, 3 0 C1 0.5, 0.5 1, 0 3 C-0.5 1, -1 0.5, -3 0 C-1 -0.5, -0.5 -1, 0 -3Z"
+          fill="white"
+        />
       </g>
     </svg>
   );
@@ -85,26 +105,28 @@ export function Logo({ variant = 'full', className = '', dark = false }: LogoPro
     <div className={`flex items-center gap-3 ${className}`}>
       {mark}
       <div className="flex flex-col leading-none">
-        <div className="flex items-baseline gap-[3px]">
-          <span
-            className="text-[16px] font-black tracking-tight"
-            style={{ color: textColor }}
-          >
-            TURF
-          </span>
-          <span
-            className="text-[16px] font-black tracking-tight"
-            style={{ color: subColor }}
-          >
-            CLEANING
-          </span>
-        </div>
         <span
-          className="text-[9.5px] font-semibold tracking-[0.18em] uppercase mt-[3px]"
-          style={{ color: mutedColor }}
+          className="text-[15.5px] font-black tracking-tight leading-tight"
+          style={{ color: textColor }}
         >
-          Las Vegas
+          TURF <span style={{ color: accentColor }}>CLEANING</span>
         </span>
+        <div className="flex items-center gap-1.5 mt-[3px]">
+          <span
+            className="block w-3 h-[1.5px] rounded-full"
+            style={{ background: accentColor, opacity: 0.5 }}
+          />
+          <span
+            className="text-[9px] font-semibold tracking-[0.2em] uppercase"
+            style={{ color: mutedColor }}
+          >
+            Las Vegas
+          </span>
+          <span
+            className="block w-3 h-[1.5px] rounded-full"
+            style={{ background: accentColor, opacity: 0.5 }}
+          />
+        </div>
       </div>
     </div>
   );
