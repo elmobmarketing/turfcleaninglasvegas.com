@@ -47,6 +47,7 @@ export function Header() {
             <NavLink to="/" className={linkClass} end>Home</NavLink>
             <NavLink to="/services" className={linkClass}>Services</NavLink>
             <NavLink to="/areas" className={linkClass}>Areas</NavLink>
+            <NavLink to="/blog" className={linkClass}>Blog</NavLink>
             <NavLink to="/about" className={linkClass}>About</NavLink>
             <NavLink to="/contact" className={linkClass}>Contact</NavLink>
           </nav>
@@ -94,6 +95,7 @@ export function Header() {
               <NavLink to="/" className={linkClass} end>Home</NavLink>
               <NavLink to="/services" className={linkClass}>Services</NavLink>
               <NavLink to="/areas" className={linkClass}>Areas</NavLink>
+              <NavLink to="/blog" className={linkClass}>Blog</NavLink>
               <NavLink to="/about" className={linkClass}>About</NavLink>
               <NavLink to="/contact" className={linkClass}>Contact</NavLink>
             </div>

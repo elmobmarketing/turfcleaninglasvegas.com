@@ -49,6 +49,7 @@ export function Footer() {
               {[
                 { to: '/', label: 'Home' },
                 { to: '/services', label: 'Services' },
+                { to: '/blog', label: 'Blog' },
                 { to: '/quote', label: 'Free Quote' },
                 { to: '/about', label: 'About' },
                 { to: '/contact', label: 'Contact' },

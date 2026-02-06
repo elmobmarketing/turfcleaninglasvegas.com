@@ -10,6 +10,8 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Quote } from './pages/Quote';
 import { AreaLanding } from './pages/AreaLanding';
+import { Blog } from './pages/Blog';
+import { BlogPost } from './pages/BlogPost';
 import { NotFound } from './pages/NotFound';
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/areas" element={<Areas />} />
             <Route path="/areas/:slug" element={<AreaLanding />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/quote" element={<Quote />} />
