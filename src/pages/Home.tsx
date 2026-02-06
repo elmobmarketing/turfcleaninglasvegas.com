@@ -39,14 +39,14 @@ function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: str
 }
 
 const tickerItems = [
-  '347+ Five-Star Reviews',
   'Same-Day Service Available',
-  '100-Day Odor Guarantee',
   'Pet & Kid Safe Products',
   'Locally Owned & Operated',
   'Free Estimates',
   'Licensed & Insured',
-  '1,200+ Properties Cleaned',
+  'Satisfaction Guaranteed',
+  'Eco-Friendly Products',
+  'Serving All of Las Vegas Valley',
 ];
 
 export function Home() {
@@ -91,14 +91,10 @@ export function Home() {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm mb-8"
               >
-                <span className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-3.5 h-3.5 text-amber" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </span>
-                <span className="text-white/70 font-medium">Rated 4.9 by 347+ customers</span>
+                <svg className="w-4 h-4 text-turf-light" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-white/70 font-medium">Locally Owned &amp; Operated in Las Vegas</span>
               </motion.div>
 
               <h1 className="heading-display text-white mb-6">
@@ -107,14 +103,14 @@ export function Home() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg">
-                Las Vegas's #1 artificial grass cleaning service. Pet odors
-                eliminated in one visit with our{' '}
-                <strong className="text-white font-semibold">100-day guarantee</strong>.
+                Professional artificial grass cleaning built for the Las Vegas
+                desert. We eliminate pet odors, remove bacteria, and restore
+                your turf to look and feel like new.
               </p>
 
               {/* Trust chips */}
               <div className="flex flex-wrap gap-2.5 mb-10">
-                {['Same-Day Service', '100-Day Warranty', 'Eco-Friendly', 'Pet Safe'].map((badge) => (
+                {['Same-Day Service', 'Satisfaction Guaranteed', 'Eco-Friendly', 'Pet Safe'].map((badge) => (
                   <div key={badge} className="flex items-center gap-1.5 bg-white/[0.04] border border-white/8 rounded-full px-3.5 py-1.5">
                     <svg className="w-3.5 h-3.5 text-turf-light" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -164,7 +160,7 @@ export function Home() {
                       Responding Now
                     </div>
                     <h2 className="text-xl font-black text-midnight">Get Your Free Quote</h2>
-                    <p className="text-gray-400 text-xs mt-0.5">Average response time: 23 minutes</p>
+                    <p className="text-gray-400 text-xs mt-0.5">We respond within 1 hour during business hours</p>
                   </div>
                   <LeadForm source="homepage-hero" compact />
                 </div>
@@ -198,10 +194,10 @@ export function Home() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
           >
             {[
-              { value: 1200, suffix: '+', label: 'Properties Cleaned' },
-              { value: 4.9, suffix: '', label: 'Star Rating', isDecimal: true },
+              { value: 56, suffix: '', label: 'Areas Served' },
+              { value: 3, suffix: '', label: 'Service Tiers' },
               { value: 100, suffix: '%', label: 'Pet Safe Products' },
-              { value: 347, suffix: '+', label: 'Five-Star Reviews' },
+              { value: 100, suffix: '%', label: 'Satisfaction Guarantee' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -212,7 +208,7 @@ export function Home() {
                 className="text-center"
               >
                 <div className="text-3xl md:text-4xl font-black text-midnight tracking-tight">
-                  {stat.isDecimal ? '4.9' : <AnimatedCounter target={stat.value} suffix={stat.suffix} />}
+                  <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-sm text-gray-500 font-medium mt-1">{stat.label}</div>
               </motion.div>
@@ -398,7 +394,7 @@ export function Home() {
               to="/quote"
               className="inline-flex items-center gap-2 bg-midnight text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-midnight/10 hover:-translate-y-0.5 transition-all duration-300"
             >
-              Get These Results
+              Get Free Quote
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -432,8 +428,8 @@ export function Home() {
                 icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 ),
-                title: 'Pet Odor Guaranteed Gone',
-                description: 'Proprietary treatment eliminates pet odors in one visit. 100-day warranty or your money back.',
+                title: 'Pet Odor Elimination',
+                description: 'Our professional-grade treatment targets pet odors at the source. If you are not satisfied, we will reclean at no charge.',
                 span: false,
               },
               {
@@ -624,7 +620,7 @@ export function Home() {
               <span className="text-gradient-light">cleaner turf?</span>
             </h2>
             <p className="text-xl text-gray-400 mb-10 max-w-lg mx-auto">
-              Get your free quote today. Most appointments available same-day.
+              Get your free quote today. Same-day appointments available.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

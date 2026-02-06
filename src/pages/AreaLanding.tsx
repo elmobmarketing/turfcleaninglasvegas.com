@@ -223,8 +223,8 @@ export function AreaLanding() {
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               {[
-                { icon: '5.0', label: 'Google Rating' },
-                { icon: '500+', label: 'Lawns Cleaned' },
+                { icon: '100%', label: 'Pet Safe' },
+                { icon: '56+', label: 'Areas Served' },
                 { icon: '100%', label: 'Satisfaction' },
                 { icon: 'Same Day', label: 'Service Available' },
               ].map((stat) => (

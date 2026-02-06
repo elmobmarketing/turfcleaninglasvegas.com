@@ -8,7 +8,7 @@ const faqs = [
   { q: 'How long does the cleaning take?', a: 'Most residential cleanings are completed in 1-2 hours. Larger properties or deep cleaning services may take longer. We work efficiently without cutting corners.' },
   { q: 'Is the cleaning safe for my pets?', a: 'Absolutely! All our products are 100% non-toxic and pet-safe. Your pets can return to the turf as soon as it dries, typically within 30-60 minutes.' },
   { q: 'Do you offer recurring service plans?', a: 'Yes! We offer monthly, bi-monthly, and quarterly maintenance plans at discounted rates. Regular cleaning extends the life of your turf and keeps odors at bay.' },
-  { q: 'What if the odor comes back?', a: "We stand behind our work with a 100-day odor elimination guarantee. If the smell returns within that period, we'll come back and retreat at no charge." },
+  { q: 'What if the odor comes back?', a: "We stand behind our work. If you are not satisfied with the results, contact us and we will come back to retreat at no additional charge." },
 ];
 
 export function Quote() {
@@ -73,7 +73,7 @@ export function Quote() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
             >
-              Fill out the form below and we'll provide a customized quote for your
+              Fill out the form below and we will provide a customized quote for your
               artificial turf cleaning needs. No obligation, no pressure.
             </motion.p>
           </div>
@@ -99,7 +99,7 @@ export function Quote() {
                   Request Your Free Quote
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Tell us about your turf and we'll get back to you with a custom pricing estimate.
+                  Tell us about your turf and we will get back to you with a custom pricing estimate.
                 </p>
                 <LeadForm source="quote-page" />
               </div>
@@ -158,9 +158,9 @@ export function Quote() {
                 <h3 className="text-lg font-bold text-midnight mb-4">Our Guarantees</h3>
                 <ul className="space-y-3.5">
                   {[
-                    '100-day odor elimination warranty',
+                    'Satisfaction guarantee on every job',
                     'No hidden fees or surprises',
-                    'Satisfaction guaranteed',
+                    'Pet-safe, eco-friendly products',
                     'Same-day service available',
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3 text-gray-700 text-sm">
@@ -177,15 +177,13 @@ export function Quote() {
 
               {/* Trust / Rating Badge */}
               <div className="bg-gradient-to-br from-turf to-turf-light rounded-2xl p-6 text-center text-white shadow-lg shadow-turf/20">
-                <div className="flex justify-center gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
                 </div>
-                <div className="text-2xl font-black">4.9 Star Rating</div>
-                <div className="text-sm text-white/80 mt-1">Based on 347+ reviews</div>
+                <div className="text-2xl font-black">Licensed & Insured</div>
+                <div className="text-sm text-white/80 mt-1">Fully covered for every job</div>
               </div>
             </motion.div>
           </div>

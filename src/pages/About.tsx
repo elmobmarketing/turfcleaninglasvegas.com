@@ -70,9 +70,10 @@ export function About() {
                   Las Vegas climate.
                 </p>
                 <p>
-                  Today, we have helped over 1,200 Las Vegas families enjoy cleaner,
-                  healthier outdoor spaces. Our team combines cutting-edge equipment
-                  with eco-friendly solutions to deliver results that speak for themselves.
+                  Today, we help Las Vegas families across the entire valley enjoy
+                  cleaner, healthier outdoor spaces. Our team combines professional-grade
+                  equipment with eco-friendly solutions to deliver results that speak
+                  for themselves.
                 </p>
               </div>
             </motion.div>
@@ -86,10 +87,10 @@ export function About() {
             >
               <div className="grid grid-cols-2 gap-5">
                 {[
-                  { value: '1,200+', label: 'Properties Cleaned' },
-                  { value: '4.9', label: 'Star Rating' },
-                  { value: '100%', label: 'Satisfaction Rate' },
-                  { value: '5+', label: 'Years Experience' },
+                  { value: '56+', label: 'Areas Served' },
+                  { value: '3', label: 'Service Tiers' },
+                  { value: '100%', label: 'Pet Safe Products' },
+                  { value: '100%', label: 'Satisfaction Guarantee' },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
@@ -128,7 +129,7 @@ export function About() {
               {
                 title: 'Results Guaranteed',
                 description:
-                  'We stand behind our work with a 100-day odor elimination guarantee. If the smell returns, so do we at no additional charge.',
+                  'We stand behind our work with a satisfaction guarantee. If you are not happy with the results, we will come back and reclean at no additional charge.',
                 icon: (
                   <path
                     strokeLinecap="round"
@@ -380,7 +381,7 @@ export function About() {
               Ready to Experience the Difference?
             </h2>
             <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Join over 1,200 Las Vegas homeowners who trust us with their turf.
+              Las Vegas homeowners trust us with their turf. Get your free quote today.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
