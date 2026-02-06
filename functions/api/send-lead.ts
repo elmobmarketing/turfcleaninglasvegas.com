@@ -9,6 +9,11 @@ interface LeadData {
   address: string;
   city: string;
   service: string;
+  plan: string;
+  timeline: string;
+  pets: string;
+  sqft: string;
+  referral: string;
   message: string;
   source: string;
 }
@@ -71,6 +76,26 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
               <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Service</td>
               <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #111827;">${serviceLabel}</td>
             </tr>
+            ${data.plan ? `<tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Cleaning Plan</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #111827;">${data.plan}</td>
+            </tr>` : ''}
+            ${data.timeline ? `<tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Timeline</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #111827;">${data.timeline}</td>
+            </tr>` : ''}
+            ${data.pets ? `<tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Has Pets</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #111827;">${data.pets}</td>
+            </tr>` : ''}
+            ${data.sqft ? `<tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Turf Sq Ft</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #111827;">${data.sqft}</td>
+            </tr>` : ''}
+            ${data.referral ? `<tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Referral Source</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #111827;">${data.referral}</td>
+            </tr>` : ''}
             ${data.message ? `<tr>
               <td style="padding: 12px 0; font-weight: 600; color: #374151; vertical-align: top;">Message</td>
               <td style="padding: 12px 0; color: #111827;">${data.message}</td>

@@ -17,6 +17,11 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
     address: '',
     city: '',
     service: '',
+    plan: '',
+    timeline: '',
+    pets: '',
+    sqft: '',
+    referral: '',
     message: '',
     source,
   });
@@ -264,10 +269,174 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
               <option value="">Select a service</option>
               {services.map((service) => (
                 <option key={service.id} value={service.id}>
-                  {service.name} - From ${service.price}
+                  {service.name} (Starts ${service.price})
                 </option>
               ))}
               <option value="not-sure">Not sure yet</option>
+            </select>
+            <div className="pr-3.5">
+              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Cleaning Plan & Timeline */}
+      {!compact && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="lead-plan" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+              Cleaning Plan
+            </label>
+            <div className={inputWrapper('plan')}>
+              <div className="pl-3.5">
+                <svg className={iconClass('plan')} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <select
+                id="lead-plan"
+                value={formData.plan}
+                onChange={(e) => setFormData({ ...formData, plan: e.target.value })}
+                onFocus={() => setFocusedField('plan')}
+                onBlur={() => setFocusedField(null)}
+                className={`${inputClass} appearance-none cursor-pointer`}
+              >
+                <option value="">Select frequency</option>
+                <option value="one-time">One Time</option>
+                <option value="monthly">Monthly</option>
+                <option value="bi-monthly">Bi-Monthly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="other">Other</option>
+              </select>
+              <div className="pr-3.5">
+                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label htmlFor="lead-timeline" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+              Timeline
+            </label>
+            <div className={inputWrapper('timeline')}>
+              <div className="pl-3.5">
+                <svg className={iconClass('timeline')} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <select
+                id="lead-timeline"
+                value={formData.timeline}
+                onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                onFocus={() => setFocusedField('timeline')}
+                onBlur={() => setFocusedField(null)}
+                className={`${inputClass} appearance-none cursor-pointer`}
+              >
+                <option value="">When do you need service?</option>
+                <option value="immediately">Immediately</option>
+                <option value="next-week">Next Week</option>
+                <option value="2-4-weeks">2-4 Weeks</option>
+                <option value="over-a-month">Over a Month</option>
+              </select>
+              <div className="pr-3.5">
+                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Pets & Sq Footage */}
+      {!compact && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="lead-pets" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+              Do You Have Pets?
+            </label>
+            <div className={inputWrapper('pets')}>
+              <div className="pl-3.5">
+                <svg className={iconClass('pets')} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <select
+                id="lead-pets"
+                value={formData.pets}
+                onChange={(e) => setFormData({ ...formData, pets: e.target.value })}
+                onFocus={() => setFocusedField('pets')}
+                onBlur={() => setFocusedField(null)}
+                className={`${inputClass} appearance-none cursor-pointer`}
+              >
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+              <div className="pr-3.5">
+                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label htmlFor="lead-sqft" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+              Turf Square Footage
+            </label>
+            <div className={inputWrapper('sqft')}>
+              <div className="pl-3.5">
+                <svg className={iconClass('sqft')} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="lead-sqft"
+                value={formData.sqft}
+                onChange={(e) => setFormData({ ...formData, sqft: e.target.value })}
+                onFocus={() => setFocusedField('sqft')}
+                onBlur={() => setFocusedField(null)}
+                className={inputClass}
+                placeholder="e.g. 500 sq ft"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Referral Source */}
+      {!compact && (
+        <div>
+          <label htmlFor="lead-referral" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+            How Did You Hear About Us?
+          </label>
+          <div className={inputWrapper('referral')}>
+            <div className="pl-3.5">
+              <svg className={iconClass('referral')} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <select
+              id="lead-referral"
+              value={formData.referral}
+              onChange={(e) => setFormData({ ...formData, referral: e.target.value })}
+              onFocus={() => setFocusedField('referral')}
+              onBlur={() => setFocusedField(null)}
+              className={`${inputClass} appearance-none cursor-pointer`}
+            >
+              <option value="">Select</option>
+              <option value="google">Google Search</option>
+              <option value="facebook">Facebook</option>
+              <option value="instagram">Instagram</option>
+              <option value="nextdoor">Nextdoor</option>
+              <option value="referral">Friend/Neighbor Referral</option>
+              <option value="yard-sign">Yard Sign</option>
+              <option value="other">Other</option>
             </select>
             <div className="pr-3.5">
               <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
