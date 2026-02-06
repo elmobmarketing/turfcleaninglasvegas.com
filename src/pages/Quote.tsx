@@ -50,7 +50,7 @@ export function Quote() {
       <section className="hero-dark relative overflow-hidden py-20 md:py-28 text-white">
         {/* Hero background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
-          <img src="/images/turf/backyard-gravel-border.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/images/turf/backyard-gravel-border.webp" alt="Las Vegas backyard with artificial turf and gravel border" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
         {/* Grid Pattern Overlay */}

@@ -77,7 +77,7 @@ export function Contact() {
       <section className="hero-dark relative overflow-hidden py-24 md:py-32">
         {/* Hero background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
-          <img src="/images/turf/turf-pergola-desert.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/images/turf/turf-pergola-desert.webp" alt="Artificial turf under a pergola in a Las Vegas desert landscape" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
         {/* Grid Pattern Overlay */}

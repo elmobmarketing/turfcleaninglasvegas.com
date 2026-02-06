@@ -28,7 +28,7 @@ export function Areas() {
       <section className="hero-dark text-white overflow-hidden relative">
         {/* Hero background image */}
         <div className="absolute inset-0" style={{ zIndex: 2 }}>
-          <img src="/images/turf/backyard-palm-trees.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/images/turf/backyard-palm-trees.webp" alt="Artificial turf backyard with palm trees in the Las Vegas Valley" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
         <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" style={{ zIndex: 3 }} />
@@ -240,7 +240,7 @@ export function Areas() {
       <section className="hero-dark text-white py-20 relative overflow-hidden">
         {/* CTA background image */}
         <div className="absolute inset-0" style={{ zIndex: 2 }}>
-          <img src="/images/turf/side-yard-turf.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/images/turf/side-yard-turf.webp" alt="Side yard with clean artificial turf in a Las Vegas home" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
         <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" style={{ zIndex: 3 }} />

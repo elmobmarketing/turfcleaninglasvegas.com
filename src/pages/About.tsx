@@ -35,7 +35,7 @@ export function About() {
       <section className="hero-dark text-white py-24 md:py-32 relative overflow-hidden">
         {/* Hero background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
-          <img src="/images/turf/desert-landscape-turf.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/images/turf/desert-landscape-turf.webp" alt="Artificial turf with desert landscaping in a Las Vegas yard" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
 
@@ -405,7 +405,7 @@ export function About() {
       <section className="hero-dark py-20 md:py-24 relative overflow-hidden">
         {/* CTA background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
-          <img src="/images/turf/putting-green-flag.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/images/turf/putting-green-flag.webp" alt="Putting green with flag on a Las Vegas residential property" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
         {/* Grid pattern overlay */}

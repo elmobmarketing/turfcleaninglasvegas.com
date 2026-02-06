@@ -121,7 +121,7 @@ export function AreaLanding() {
       <section className="hero-dark text-white overflow-hidden relative">
         {/* Hero background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
-          <img src="/images/turf/turf-ground-level.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/images/turf/turf-ground-level.webp" alt="Ground-level view of professionally cleaned artificial turf in Las Vegas" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
         <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
@@ -570,7 +570,7 @@ export function AreaLanding() {
       <section className="hero-dark text-white py-20 relative overflow-hidden">
         {/* CTA background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
-          <img src="/images/turf/putting-green-flag.webp" alt="" className="w-full h-full object-cover" />
+          <img src="/images/turf/putting-green-flag.webp" alt="Putting green with flag on a Las Vegas residential property" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
         <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
