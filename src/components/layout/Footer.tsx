@@ -25,7 +25,7 @@ export function Footer() {
               throughout the valley.
             </p>
             <address className="not-italic text-gray-500 text-sm mb-6">
-              6671 S Las Vegas Blvd, Las Vegas, NV 89119
+              Las Vegas, NV
             </address>
             <div className="flex gap-2.5">
               {[
