@@ -77,9 +77,10 @@ export function Home() {
           className="max-w-6xl mx-auto px-4 py-20 md:py-0 relative"
           initial={false}
         >
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center" style={{ zIndex: 10, position: 'relative' }}>
+          <div className="grid md:grid-cols-12 gap-10 lg:gap-14 items-center" style={{ zIndex: 10, position: 'relative' }}>
             {/* Left */}
             <motion.div
+              className="md:col-span-7"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -148,6 +149,7 @@ export function Home() {
 
             {/* Right - Lead form card */}
             <motion.div
+              className="md:col-span-5"
               initial={{ opacity: 0, y: 50, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
