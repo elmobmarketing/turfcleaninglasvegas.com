@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { serviceAreas, services, PHONE_NUMBER, PHONE_HREF, EMAIL } from '../data/services';
 import { LeadForm } from '../components/LeadForm';
 import { useSEO } from '../hooks/useSEO';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 export function AreaLanding() {
   const { slug } = useParams<{ slug: string }>();
@@ -204,6 +205,8 @@ export function AreaLanding() {
           </div>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Service Areas', to: '/areas' }, { label: area.name }]} />
 
       {/* Trust Bar */}
       <section className="relative z-10 -mt-6">

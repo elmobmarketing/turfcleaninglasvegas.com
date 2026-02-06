@@ -19,11 +19,14 @@ export function Footer() {
             <div className="mb-5">
               <Logo variant="full" dark />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-gray-400 text-sm leading-relaxed mb-4 max-w-xs">
               Las Vegas's trusted artificial turf cleaning experts.
               Pet-safe, eco-friendly solutions for homes and businesses
               throughout the valley.
             </p>
+            <address className="not-italic text-gray-500 text-sm mb-6">
+              6671 S Las Vegas Blvd, Las Vegas, NV 89119
+            </address>
             <div className="flex gap-2.5">
               {[
                 { label: 'Facebook', path: 'M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z' },

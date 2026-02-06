@@ -3,6 +3,7 @@ import type { FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { PHONE_NUMBER, PHONE_HREF, EMAIL } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 export function Contact() {
   const breadcrumbSchema = useMemo(() => ({
@@ -125,6 +126,8 @@ export function Contact() {
           </motion.p>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Contact' }]} />
 
       {/* Main Content */}
       <section className="py-20 bg-cream">

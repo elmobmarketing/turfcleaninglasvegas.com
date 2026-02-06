@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import { serviceAreas, PHONE_NUMBER, PHONE_HREF } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 export function Areas() {
   const breadcrumbSchema = useMemo(() => ({
@@ -60,6 +61,8 @@ export function Areas() {
           </div>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Service Areas' }]} />
 
       {/* Service Areas Grid */}
       <section className="py-20 bg-white">

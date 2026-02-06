@@ -9,10 +9,47 @@
     <image:image>
       <image:loc>https://turfcleaninglasvegas.com/images/turf/hero-turf-closeup.webp</image:loc>
       <image:title>Professional artificial turf cleaning in Las Vegas</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
     </image:image>
     <image:image>
       <image:loc>https://turfcleaninglasvegas.com/og-image.jpg</image:loc>
       <image:title>Turf Cleaning Las Vegas - Upscale backyard with clean artificial turf</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/desert-landscape-turf.webp</image:loc>
+      <image:title>Clean artificial turf with desert landscaping in Las Vegas</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/upscale-backyard-patio.webp</image:loc>
+      <image:title>Upscale Las Vegas backyard with pristine artificial turf</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/turf-pool-area.webp</image:loc>
+      <image:title>Artificial turf next to pool area in Las Vegas home</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/family-backyard-swingset.webp</image:loc>
+      <image:title>Family backyard with clean turf and play area</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/putting-green-palms.webp</image:loc>
+      <image:title>Putting green with palm trees in Las Vegas</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/backyard-gravel-border.webp</image:loc>
+      <image:title>Large turf area with gravel border and patio furniture</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/backyard-curved-patio.webp</image:loc>
+      <image:title>Las Vegas backyard with curved patio and clean artificial turf lawn</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
     </image:image>
   </url>
   <url>
@@ -22,7 +59,13 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://turfcleaninglasvegas.com/images/turf/turf-stone-pavers.webp</image:loc>
-      <image:title>Turf cleaning services in Las Vegas</image:title>
+      <image:title>Turf cleaning services in Las Vegas - turf with stone pavers</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/putting-green-pool.webp</image:loc>
+      <image:title>Putting green next to pool area in Las Vegas</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
     </image:image>
   </url>
   <url>
@@ -33,6 +76,17 @@
     <image:image>
       <image:loc>https://turfcleaninglasvegas.com/images/turf/backyard-palm-trees.webp</image:loc>
       <image:title>Las Vegas Valley turf cleaning service areas</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/turf-closeup-wall.webp</image:loc>
+      <image:title>Close-up of clean artificial turf in Las Vegas</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/side-yard-turf.webp</image:loc>
+      <image:title>Side yard artificial turf in Las Vegas home</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
     </image:image>
   </url>
   <url>
@@ -42,7 +96,18 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://turfcleaninglasvegas.com/images/turf/desert-landscape-turf.webp</image:loc>
-      <image:title>About Turf Cleaning Las Vegas</image:title>
+      <image:title>About Turf Cleaning Las Vegas - desert landscape with turf</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/turf-pool-area.webp</image:loc>
+      <image:title>Clean artificial turf next to pool in Las Vegas backyard</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/putting-green-flag.webp</image:loc>
+      <image:title>Putting green with flag in Las Vegas backyard</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
     </image:image>
   </url>
   <url>
@@ -50,18 +115,38 @@
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/turf-pergola-desert.webp</image:loc>
+      <image:title>Contact Turf Cleaning Las Vegas - turf with pergola in desert setting</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
   </url>
   <url>
     <loc>https://turfcleaninglasvegas.com/quote</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/backyard-gravel-border.webp</image:loc>
+      <image:title>Get a free turf cleaning quote - Las Vegas backyard with turf</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
   </url>
   <url>
     <loc>https://turfcleaninglasvegas.com/areas/las-vegas</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/turf-ground-level.webp</image:loc>
+      <image:title>Artificial turf cleaning in Las Vegas, NV</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/turf-sports-net.webp</image:loc>
+      <image:title>Clean artificial turf with sports net in Las Vegas</image:title>
+      <image:geo_location>Las Vegas, Nevada</image:geo_location>
+    </image:image>
   </url>
   <url>
     <loc>https://turfcleaninglasvegas.com/areas/henderson</loc>

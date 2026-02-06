@@ -73,7 +73,7 @@ export function Home() {
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
           <img
             src="/images/turf/hero-turf-closeup.webp"
-            alt=""
+            alt="Close-up of professionally cleaned artificial turf in a Las Vegas backyard"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-midnight/95 via-midnight/85 to-midnight/70" />
@@ -253,64 +253,50 @@ export function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.12 }}
-                className={`relative rounded-2xl p-7 transition-all duration-500 group ${
+                transition={{ delay: index * 0.1 }}
+                className={`card-glow rounded-2xl p-8 border-2 transition-all ${
                   service.popular
-                    ? 'bg-midnight text-white ring-1 ring-turf/30 shadow-2xl'
-                    : 'bg-white border border-gray-200/80 card-lift'
+                    ? 'border-turf bg-turf/5 relative'
+                    : 'border-gray-100 bg-white'
                 }`}
               >
                 {service.popular && (
-                  <div className="absolute -top-3 left-6">
-                    <span className="inline-block bg-gradient-to-r from-turf to-turf-light text-white text-[10px] font-bold px-4 py-1.5 rounded-full tracking-widest uppercase shadow-lg shadow-turf/25">
-                      Most Popular
-                    </span>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-turf to-turf-light text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                    Most Popular
                   </div>
                 )}
-
-                <div className="mb-5 mt-1">
-                  <h3 className={`text-xl font-bold mb-1 ${service.popular ? 'text-white' : 'text-midnight'}`}>
-                    {service.name}
-                  </h3>
-                  <div className="flex items-baseline gap-1.5">
-                    <span className={`text-xs font-medium ${service.popular ? 'text-gray-400' : 'text-gray-400'}`}>From</span>
-                    <span className={`text-4xl font-black ${service.popular ? 'text-turf-light' : 'text-midnight'}`}>
-                      ${service.price}
-                    </span>
-                  </div>
+                <h3 className="text-xl font-bold text-midnight mb-2">{service.name}</h3>
+                <p className="text-gray-500 text-sm mb-4">{service.description}</p>
+                <div className="mb-6">
+                  <span className="text-4xl font-black text-midnight">${service.price}</span>
+                  <span className="text-gray-400 ml-1">starting</span>
                 </div>
-
-                <p className={`text-sm leading-relaxed mb-6 ${service.popular ? 'text-gray-300' : 'text-gray-500'}`}>
-                  {service.description}
-                </p>
-
-                <ul className="space-y-2.5 mb-7">
+                <ul className="space-y-3 mb-8">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm gap-2.5">
-                      <svg className={`w-4 h-4 flex-shrink-0 ${service.popular ? 'text-turf-light' : 'text-turf'}`} fill="currentColor" viewBox="0 0 20 20">
+                    <li key={feature} className="flex items-start gap-2 text-sm text-gray-600">
+                      <svg className="w-5 h-5 text-turf flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className={service.popular ? 'text-gray-200' : 'text-gray-600'}>{feature}</span>
+                      {feature}
                     </li>
                   ))}
                 </ul>
-
                 <Link
                   to="/quote"
-                  className={`block text-center py-3.5 rounded-xl font-bold text-sm transition-all duration-300 ${
+                  className={`block text-center py-3.5 rounded-xl font-bold transition-all ${
                     service.popular
-                      ? 'btn-shimmer bg-gradient-to-r from-turf to-turf-light text-white shadow-lg shadow-turf/25 hover:-translate-y-0.5'
-                      : 'bg-midnight text-white hover:-translate-y-0.5 shadow-lg shadow-midnight/10'
+                      ? 'btn-shimmer bg-gradient-to-r from-turf to-turf-light text-white shadow-lg shadow-turf/20 hover:shadow-xl'
+                      : 'bg-midnight/5 text-midnight hover:bg-midnight hover:text-white'
                   }`}
                 >
-                  Get Quote
+                  Get {service.shortName} Quote
                 </Link>
               </motion.div>
             ))}
@@ -661,7 +647,7 @@ export function Home() {
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
           <img
             src="/images/turf/backyard-curved-patio.webp"
-            alt=""
+            alt="Las Vegas backyard with curved patio and clean artificial turf lawn"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-midnight/90" />

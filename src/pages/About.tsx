@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useMemo } from 'react';
 import { PHONE_NUMBER, PHONE_HREF } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -72,6 +73,8 @@ export function About() {
           </motion.div>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'About' }]} />
 
       {/* Our Story */}
       <section className="py-20 bg-white">

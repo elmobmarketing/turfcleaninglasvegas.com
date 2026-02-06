@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import type { ReactNode } from 'react';
 import { services, PHONE_NUMBER, PHONE_HREF } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 const serviceIcons: Record<string, ReactNode> = {
   refresh: (
@@ -111,20 +112,54 @@ const stagger = {
 };
 
 export function Services() {
-  const breadcrumbSchema = useMemo(() => ({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://turfcleaninglasvegas.com' },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://turfcleaninglasvegas.com/services' },
-    ],
-  }), []);
+  const schemas = useMemo(() => [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://turfcleaninglasvegas.com' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://turfcleaninglasvegas.com/services' },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: 'How We Clean Artificial Turf in Las Vegas',
+      description: 'Our four-step professional turf cleaning process designed for the Las Vegas desert climate.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Inspect',
+          text: 'Thorough assessment of turf condition, identifying problem areas and customizing our approach.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Clean',
+          text: 'Remove debris, pet waste, and buildup using professional-grade equipment and eco-friendly solutions.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Treat',
+          text: 'Apply antimicrobial treatments to eliminate bacteria, odors, and restore freshness.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 4,
+          name: 'Restore',
+          text: 'Brush, fluff, and redistribute infill to bring back that like-new appearance and feel.',
+        },
+      ],
+    },
+  ], []);
 
   useSEO({
     title: 'Turf Cleaning Services Las Vegas | Refresh, Restore & Deep Clean Pricing',
     description: 'Professional turf cleaning services in Las Vegas starting at $299. Refresh Clean, Restore Clean, and Deep Clean options. Pet odor removal, sanitization, and full restoration. Free quotes.',
     canonical: '/services',
-    schema: breadcrumbSchema,
+    schema: schemas,
   });
 
   return (
@@ -170,6 +205,8 @@ export function Services() {
           </motion.div>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Services' }]} />
 
       {/* Services Detail */}
       <section className="py-20 md:py-28 bg-white">

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { LeadForm } from '../components/LeadForm';
 import { PHONE_NUMBER, PHONE_HREF } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 const faqs = [
   { q: 'How much does turf cleaning cost?', a: 'Our services start at $299 for a basic refresh clean. The exact price depends on your turf size and the level of cleaning needed. We provide free, no-obligation quotes.' },
@@ -94,6 +95,8 @@ export function Quote() {
           </div>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Free Quote' }]} />
 
       {/* Form Section */}
       <section className="py-16 md:py-20 bg-cream">
