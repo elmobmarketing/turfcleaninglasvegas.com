@@ -155,16 +155,16 @@ export function Home() {
               <div className="relative">
                 <div className="absolute -inset-3 bg-gradient-to-br from-turf/20 via-transparent to-amber/10 rounded-[2rem] blur-2xl" />
                 <div className="relative bg-white rounded-[1.75rem] overflow-hidden shadow-2xl shadow-black/30">
-                  <div className="text-center px-6 pt-6 pb-2">
-                    <div className="inline-flex items-center gap-2 bg-turf-50 text-turf text-sm font-semibold px-4 py-1.5 rounded-full mb-3">
-                      <span className="relative flex h-2 w-2">
+                  <div className="text-center px-5 pt-5 pb-1">
+                    <div className="inline-flex items-center gap-2 bg-turf-50 text-turf text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                      <span className="relative flex h-1.5 w-1.5">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-turf opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-turf" />
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-turf" />
                       </span>
                       Responding Now
                     </div>
-                    <h2 className="text-2xl font-black text-midnight">Get Your Free Quote</h2>
-                    <p className="text-gray-400 text-sm mt-1">Average response time: 23 minutes</p>
+                    <h2 className="text-xl font-black text-midnight">Get Your Free Quote</h2>
+                    <p className="text-gray-400 text-xs mt-0.5">Average response time: 23 minutes</p>
                   </div>
                   <LeadForm source="homepage-hero" compact />
                 </div>

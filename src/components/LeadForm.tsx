@@ -84,12 +84,13 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
       focusedField === field ? 'text-turf' : 'text-gray-400'
     }`;
 
-  const inputClass =
-    'w-full bg-transparent py-3 pr-4 text-midnight placeholder-gray-400 text-[15px] outline-none';
+  const inputClass = compact
+    ? 'w-full bg-transparent py-2.5 pr-3 text-midnight placeholder-gray-400 text-sm outline-none'
+    : 'w-full bg-transparent py-3 pr-4 text-midnight placeholder-gray-400 text-[15px] outline-none';
 
   return (
-    <form onSubmit={handleSubmit} className={compact ? 'p-5 space-y-3.5' : 'p-6 md:p-8 space-y-4'}>
-      <div className={compact ? 'space-y-3.5' : 'grid grid-cols-1 md:grid-cols-2 gap-4'}>
+    <form onSubmit={handleSubmit} className={compact ? 'px-5 pt-4 pb-5 space-y-3' : 'p-6 md:p-8 space-y-4'}>
+      <div className={compact ? 'space-y-3' : 'grid grid-cols-1 md:grid-cols-2 gap-4'}>
         {/* Name */}
         <div>
           <label htmlFor="lead-name" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
@@ -141,7 +142,7 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
         </div>
       </div>
 
-      <div className={compact ? 'space-y-3.5' : 'grid grid-cols-1 md:grid-cols-2 gap-4'}>
+      <div className={compact ? 'space-y-3' : 'grid grid-cols-1 md:grid-cols-2 gap-4'}>
         {/* Email */}
         <div>
           <label htmlFor="lead-email" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
@@ -230,7 +231,7 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
       )}
 
       {/* Service */}
-      {showService && (
+      {showService && !compact && (
         <div>
           <label htmlFor="lead-service" className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
             Service Interested In
@@ -294,7 +295,7 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
           disabled={loading}
           whileHover={!loading ? { scale: 1.01 } : {}}
           whileTap={!loading ? { scale: 0.98 } : {}}
-          className="w-full relative overflow-hidden bg-gradient-to-r from-turf to-turf-light text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-turf/25 hover:shadow-xl hover:shadow-turf/35 transition-shadow duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+          className={`w-full relative overflow-hidden bg-gradient-to-r from-turf to-turf-light text-white font-bold rounded-xl shadow-lg shadow-turf/25 hover:shadow-xl hover:shadow-turf/35 transition-shadow duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${compact ? 'text-base py-3' : 'text-lg py-4'}`}
         >
           <span className="relative z-10 flex items-center justify-center gap-2.5">
             {loading ? (
@@ -320,23 +321,23 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
         </motion.button>
       </AnimatePresence>
 
-      <div className="flex items-center justify-center gap-4 pt-1">
-        <div className="flex items-center gap-1.5 text-xs text-gray-400">
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className={`flex items-center justify-center gap-3 ${compact ? 'pt-0.5' : 'pt-1'}`}>
+        <div className={`flex items-center gap-1 ${compact ? 'text-[10px]' : 'text-xs'} text-gray-400`}>
+          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
           Secure
         </div>
-        <div className="w-1 h-1 rounded-full bg-gray-300" />
-        <div className="flex items-center gap-1.5 text-xs text-gray-400">
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-0.5 h-0.5 rounded-full bg-gray-300" />
+        <div className={`flex items-center gap-1 ${compact ? 'text-[10px]' : 'text-xs'} text-gray-400`}>
+          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           1-Hour Response
         </div>
-        <div className="w-1 h-1 rounded-full bg-gray-300" />
-        <div className="flex items-center gap-1.5 text-xs text-gray-400">
-          <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+        <div className="w-0.5 h-0.5 rounded-full bg-gray-300" />
+        <div className={`flex items-center gap-1 ${compact ? 'text-[10px]' : 'text-xs'} text-gray-400`}>
+          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
           No Spam
