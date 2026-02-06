@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { blogPosts, blogCategories, type BlogCategory } from '../data/blog';
+import { getPublishedPosts, blogCategories, type BlogCategory } from '../data/blog';
 import { PHONE_HREF, PHONE_NUMBER } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
 import { Breadcrumbs } from '../components/Breadcrumbs';
@@ -11,10 +11,11 @@ export function Blog() {
   const initialCategory = searchParams.get('category') as BlogCategory | null;
   const [activeCategory, setActiveCategory] = useState<BlogCategory | null>(initialCategory);
 
-  const pillarPost = blogPosts.find((p) => p.isPillar);
+  const publishedPosts = getPublishedPosts();
+  const pillarPost = publishedPosts.find((p) => p.isPillar);
   const filteredPosts = activeCategory
-    ? blogPosts.filter((p) => p.category === activeCategory && !p.isPillar)
-    : blogPosts.filter((p) => !p.isPillar);
+    ? publishedPosts.filter((p) => p.category === activeCategory && !p.isPillar)
+    : publishedPosts.filter((p) => !p.isPillar);
 
   const schemas = useMemo(() => [
     {
@@ -33,7 +34,7 @@ export function Blog() {
       url: 'https://turfcleaninglasvegas.com/blog',
       mainEntity: {
         '@type': 'ItemList',
-        itemListElement: blogPosts.map((post, index) => ({
+        itemListElement: publishedPosts.map((post, index) => ({
           '@type': 'ListItem',
           position: index + 1,
           url: `https://turfcleaninglasvegas.com/blog/${post.slug}`,
@@ -41,7 +42,7 @@ export function Blog() {
         })),
       },
     },
-  ], []);
+  ], [publishedPosts]);
 
   useSEO({
     title: 'Artificial Turf Cleaning Blog | Las Vegas Expert Guides & Tips',
