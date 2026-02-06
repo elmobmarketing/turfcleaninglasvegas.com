@@ -16,7 +16,7 @@ export function Contact() {
 
   useSEO({
     title: 'Contact Turf Cleaning Las Vegas | Call (702) 819-7749',
-    description: 'Contact Turf Cleaning Las Vegas for a free quote. Call (702) 819-7749, email info@turfcleaninglasvegas.com, or fill out our contact form. We respond within 1 hour.',
+    description: 'Contact Turf Cleaning Las Vegas for a free quote. Call (702) 819-7749, email info@turfcleaninglasvegas.com, or fill out our contact form. We respond as soon as we can.',
     canonical: '/contact',
     schema: breadcrumbSchema,
   });
@@ -101,7 +101,7 @@ export function Contact() {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-sm font-medium text-white/90">We respond within 1 hour</span>
+              <span className="text-sm font-medium text-white/90">We respond as soon as we can</span>
             </div>
           </motion.div>
 
@@ -180,7 +180,7 @@ export function Contact() {
                   <div>
                     <h3 className="font-semibold text-midnight mb-1">Email</h3>
                     <p className="text-turf font-bold group-hover:underline">{EMAIL}</p>
-                    <p className="text-sm text-gray-500 mt-0.5">We reply within 1 hour</p>
+                    <p className="text-sm text-gray-500 mt-0.5">We reply as soon as we can</p>
                   </div>
                 </a>
 
@@ -270,7 +270,7 @@ export function Contact() {
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
                     <p className="text-white/90 leading-relaxed">
-                      Thank you for reaching out. We will get back to you within 1 hour during business hours.
+                      Thank you for reaching out. We will get back to you as soon as we can during business hours.
                     </p>
                   </div>
                 </div>
@@ -456,7 +456,7 @@ export function Contact() {
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      1-Hour Response
+                      Quick Response
                     </div>
                   </div>
                 </form>

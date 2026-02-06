@@ -78,7 +78,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           </table>
           <div style="margin-top: 24px; padding: 16px; background: #ecfdf5; border-radius: 8px; border: 1px solid #a7f3d0;">
             <p style="margin: 0; color: #065f46; font-size: 14px;">
-              <strong>Action:</strong> Call ${data.name} at <a href="tel:${data.phone}" style="color: #059669; font-weight: 600;">${data.phone}</a> within 1 hour.
+              <strong>Action:</strong> Call ${data.name} at <a href="tel:${data.phone}" style="color: #059669; font-weight: 600;">${data.phone}</a> as soon as we can.
             </p>
           </div>
         </div>

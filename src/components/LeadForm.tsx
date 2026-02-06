@@ -73,7 +73,7 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
         </div>
         <h3 className="text-2xl font-black text-midnight mb-2">You're All Set!</h3>
         <p className="text-gray-600 mb-5">
-          We will contact you within <strong className="text-midnight">1 hour</strong> during business hours with your custom quote.
+          We will contact you as soon as we can during business hours with your custom quote.
         </p>
         <p className="text-sm text-gray-400">
           Need it faster? Call{' '}
@@ -351,7 +351,7 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          1-Hour Response
+          Quick Response
         </div>
         <div className="w-0.5 h-0.5 rounded-full bg-gray-300" />
         <div className={`flex items-center gap-1 ${compact ? 'text-[10px]' : 'text-xs'} text-gray-400`}>

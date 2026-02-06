@@ -105,7 +105,7 @@ export function Footer() {
                   </div>
                   <div>
                     <div className="text-sm font-medium text-white">{EMAIL}</div>
-                    <div className="text-xs text-gray-500">Reply within 1 hour</div>
+                    <div className="text-xs text-gray-500">We reply as soon as we can</div>
                   </div>
                 </a>
               </li>

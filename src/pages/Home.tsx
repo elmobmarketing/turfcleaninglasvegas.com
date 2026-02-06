@@ -177,7 +177,7 @@ export function Home() {
                       Responding Now
                     </div>
                     <h2 className="text-xl font-black text-midnight">Get Your Free Quote</h2>
-                    <p className="text-gray-400 text-xs mt-0.5">We respond within 1 hour during business hours</p>
+                    <p className="text-gray-400 text-xs mt-0.5">We respond as soon as we can during business hours</p>
                   </div>
                   <LeadForm source="homepage-hero" compact />
                 </div>
