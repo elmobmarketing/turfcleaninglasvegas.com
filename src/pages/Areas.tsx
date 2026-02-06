@@ -8,11 +8,11 @@ export function Areas() {
       {/* Hero */}
       <section className="hero-dark text-white overflow-hidden relative">
         {/* Hero background image */}
-        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+        <div className="absolute inset-0" style={{ zIndex: 2 }}>
           <img src="/images/turf/backyard-palm-trees.webp" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
-        <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
+        <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" style={{ zIndex: 3 }} />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-[10%] w-72 h-72 bg-turf/10 rounded-full blur-3xl animate-float" />
           <div className="absolute top-40 right-[15%] w-96 h-96 bg-turf/5 rounded-full blur-3xl animate-float-slow" />
@@ -218,11 +218,11 @@ export function Areas() {
       {/* CTA */}
       <section className="hero-dark text-white py-20 relative overflow-hidden">
         {/* CTA background image */}
-        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+        <div className="absolute inset-0" style={{ zIndex: 2 }}>
           <img src="/images/turf/side-yard-turf.webp" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-midnight/85" />
         </div>
-        <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
+        <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" style={{ zIndex: 3 }} />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-10 right-[20%] w-72 h-72 bg-turf/10 rounded-full blur-3xl animate-float" />
         </div>
