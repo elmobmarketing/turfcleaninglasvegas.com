@@ -62,6 +62,16 @@ export function Home() {
     <div>
       {/* Hero */}
       <section ref={heroRef} className="hero-dark min-h-[100vh] flex flex-col justify-center text-white overflow-hidden relative">
+        {/* Hero background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img
+            src="/images/turf/hero-turf-closeup.webp"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-midnight/95 via-midnight/85 to-midnight/70" />
+        </div>
+
         {/* Animated orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 2 }}>
           <div className="orb w-[500px] h-[500px] bg-turf/12 top-[-10%] right-[-10%] animate-blob" />
@@ -70,7 +80,7 @@ export function Home() {
         </div>
 
         {/* Grid pattern overlay */}
-        <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none" style={{ zIndex: 2 }} />
+        <div className="absolute inset-0 grid-pattern opacity-20 pointer-events-none" style={{ zIndex: 2 }} />
 
         <motion.div
           style={{ y: heroY, opacity: heroOpacity }}
@@ -594,8 +604,61 @@ export function Home() {
         </div>
       </section>
 
+      {/* Photo Gallery */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            className="text-center mb-14"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="section-tag justify-center">Our Work</span>
+            <h2 className="heading-section text-midnight">
+              Real Las Vegas properties we service.
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {[
+              { src: '/images/turf/desert-landscape-turf.webp', alt: 'Clean artificial turf with desert landscaping in Las Vegas', span: false },
+              { src: '/images/turf/upscale-backyard-patio.webp', alt: 'Upscale Las Vegas backyard with pristine artificial turf', span: true },
+              { src: '/images/turf/turf-pool-area.webp', alt: 'Artificial turf next to pool area in Las Vegas home', span: false },
+              { src: '/images/turf/family-backyard-swingset.webp', alt: 'Family backyard with clean turf and play area', span: false },
+              { src: '/images/turf/putting-green-palms.webp', alt: 'Putting green with palm trees in Las Vegas', span: false },
+              { src: '/images/turf/backyard-gravel-border.webp', alt: 'Large turf area with gravel border and patio furniture', span: true },
+            ].map((photo, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className={`overflow-hidden rounded-2xl ${photo.span ? 'md:col-span-2' : ''}`}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="hero-dark py-24 md:py-32 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img
+            src="/images/turf/backyard-curved-patio.webp"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-midnight/90" />
+        </div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 2 }}>
           <div className="orb w-96 h-96 bg-turf/10 top-[-10%] left-[20%] animate-float-slow" />
           <div className="orb w-72 h-72 bg-amber/5 bottom-[-10%] right-[10%] animate-float" />

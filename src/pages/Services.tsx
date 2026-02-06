@@ -113,6 +113,12 @@ export function Services() {
     <div>
       {/* Hero */}
       <section className="hero-dark relative overflow-hidden py-24 md:py-32">
+        {/* Hero background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img src="/images/turf/turf-stone-pavers.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-midnight/85" />
+        </div>
+
         {/* Grid pattern overlay */}
         <div className="grid-pattern" />
 
@@ -404,6 +410,11 @@ export function Services() {
 
       {/* CTA */}
       <section className="hero-dark relative overflow-hidden py-20 md:py-28">
+        {/* Background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img src="/images/turf/putting-green-pool.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-midnight/90" />
+        </div>
         {/* Grid pattern overlay */}
         <div className="grid-pattern" />
 

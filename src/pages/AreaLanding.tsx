@@ -135,6 +135,11 @@ export function AreaLanding() {
     <div>
       {/* Hero */}
       <section className="hero-dark text-white overflow-hidden relative">
+        {/* Hero background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img src="/images/turf/turf-ground-level.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-midnight/85" />
+        </div>
         <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-[10%] w-72 h-72 bg-turf/10 rounded-full blur-3xl animate-float" />

@@ -37,6 +37,11 @@ export function Quote() {
     <div>
       {/* Hero */}
       <section className="hero-dark relative overflow-hidden py-20 md:py-28 text-white">
+        {/* Hero background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img src="/images/turf/backyard-gravel-border.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-midnight/85" />
+        </div>
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 grid-pattern opacity-10 pointer-events-none" />
         {/* Floating Orbs */}

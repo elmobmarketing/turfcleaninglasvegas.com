@@ -14,6 +14,12 @@ export function About() {
     <div>
       {/* Hero */}
       <section className="hero-dark text-white py-24 md:py-32 relative overflow-hidden">
+        {/* Hero background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img src="/images/turf/desert-landscape-turf.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-midnight/85" />
+        </div>
+
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 grid-pattern pointer-events-none" />
 
@@ -83,8 +89,15 @@ export function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-turf/15 to-amber/15 rounded-2xl p-8"
+              className="rounded-2xl overflow-hidden"
             >
+              <img
+                src="/images/turf/turf-pool-area.webp"
+                alt="Clean artificial turf next to pool in Las Vegas backyard"
+                className="w-full h-64 object-cover rounded-2xl mb-8"
+                loading="lazy"
+              />
+            <div className="bg-gradient-to-br from-turf/15 to-amber/15 rounded-2xl p-8">
               <div className="grid grid-cols-2 gap-5">
                 {[
                   { value: '56+', label: 'Areas Served' },
@@ -107,6 +120,7 @@ export function About() {
                   </motion.div>
                 ))}
               </div>
+            </div>
             </motion.div>
           </div>
         </div>
