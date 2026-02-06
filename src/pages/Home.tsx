@@ -20,16 +20,16 @@ export function Home() {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                Rated #1 in Las Vegas - 347+ 5-Star Reviews
+                347+ Five-Star Reviews
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Las Vegas's Premier
-                <span className="text-vegas-green"> Turf Cleaning</span> Service
+                Your Turf Looks New Again
+                <span className="text-vegas-green"> or You Don't Pay</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-6 leading-relaxed">
-                Professional artificial grass cleaning for homes and businesses.
-                <strong className="text-white"> Pet odor removal guaranteed</strong> or your money back.
-                100% safe for kids and pets.
+                Las Vegas's #1 artificial grass cleaning service.
+                <strong className="text-white"> Pet odor eliminated in one visit</strong> with our
+                100-day guarantee. Safe for kids and pets.
               </p>
 
               {/* Trust badges */}
@@ -195,6 +195,90 @@ export function Home() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before & After / Results */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              See the Difference
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Real results from real Las Vegas properties. Our cleaning process restores
+              your turf to like-new condition.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                label: 'Pet Odor Removal',
+                before: 'Strong ammonia smell, discolored turf',
+                after: 'Fresh, odor-free lawn safe for the whole family',
+                location: 'Summerlin Home',
+              },
+              {
+                label: 'Deep Restoration',
+                before: 'Matted, compacted fibers with embedded debris',
+                after: 'Fluffy, upright blades that look brand new',
+                location: 'Henderson Backyard',
+              },
+              {
+                label: 'Stain Removal',
+                before: 'Visible stains and discoloration throughout',
+                after: 'Even color and clean surface restored',
+                location: 'North Las Vegas Property',
+              },
+            ].map((result, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200"
+              >
+                <div className="p-6">
+                  <span className="inline-block bg-vegas-green/10 text-vegas-green text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                    {result.label}
+                  </span>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <span className="inline-flex items-center justify-center w-6 h-6 bg-red-100 text-red-600 rounded-full text-xs font-bold flex-shrink-0 mt-0.5">
+                        X
+                      </span>
+                      <p className="text-gray-500 text-sm">{result.before}</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <svg className="w-6 h-6 text-vegas-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <p className="text-gray-900 text-sm font-medium">{result.after}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-gray-200 text-xs text-gray-400">
+                    {result.location}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              to="/quote"
+              className="inline-block bg-vegas-green text-white px-8 py-4 rounded-xl font-semibold hover:bg-vegas-green/90 transition-colors"
+            >
+              Get These Results for Your Turf
+            </Link>
           </div>
         </div>
       </section>

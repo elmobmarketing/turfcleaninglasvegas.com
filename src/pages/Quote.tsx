@@ -1,8 +1,53 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { LeadForm } from '../components/LeadForm';
 import { PHONE_NUMBER, PHONE_HREF } from '../data/services';
 
+const faqs = [
+  {
+    q: 'How much does turf cleaning cost?',
+    a: 'Our services start at $149 for a basic refresh clean. The exact price depends on your turf size and the level of cleaning needed. We provide free, no-obligation quotes.',
+  },
+  {
+    q: 'How long does the cleaning take?',
+    a: 'Most residential cleanings are completed in 1-2 hours. Larger properties or deep cleaning services may take longer. We work efficiently without cutting corners.',
+  },
+  {
+    q: 'Is the cleaning safe for my pets?',
+    a: 'Absolutely! All our products are 100% non-toxic and pet-safe. Your pets can return to the turf as soon as it dries, typically within 30-60 minutes.',
+  },
+  {
+    q: 'Do you offer recurring service plans?',
+    a: 'Yes! We offer monthly, bi-monthly, and quarterly maintenance plans at discounted rates. Regular cleaning extends the life of your turf and keeps odors at bay.',
+  },
+  {
+    q: 'What if the odor comes back?',
+    a: "We stand behind our work with a 100-day odor elimination guarantee. If the smell returns within that period, we'll come back and retreat at no charge.",
+  },
+];
+
 export function Quote() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.a,
+        },
+      })),
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div>
       {/* Hero */}
@@ -136,28 +181,7 @@ export function Quote() {
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
-            {[
-              {
-                q: 'How much does turf cleaning cost?',
-                a: 'Our services start at $149 for a basic refresh clean. The exact price depends on your turf size and the level of cleaning needed. We provide free, no-obligation quotes.',
-              },
-              {
-                q: 'How long does the cleaning take?',
-                a: 'Most residential cleanings are completed in 1-2 hours. Larger properties or deep cleaning services may take longer. We work efficiently without cutting corners.',
-              },
-              {
-                q: 'Is the cleaning safe for my pets?',
-                a: 'Absolutely! All our products are 100% non-toxic and pet-safe. Your pets can return to the turf as soon as it dries, typically within 30-60 minutes.',
-              },
-              {
-                q: 'Do you offer recurring service plans?',
-                a: 'Yes! We offer monthly, bi-monthly, and quarterly maintenance plans at discounted rates. Regular cleaning extends the life of your turf and keeps odors at bay.',
-              },
-              {
-                q: 'What if the odor comes back?',
-                a: 'We stand behind our work with a 100-day odor elimination guarantee. If the smell returns within that period, we\'ll come back and retreat at no charge.',
-              },
-            ].map((faq, index) => (
+            {faqs.map((faq, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
