@@ -154,8 +154,8 @@ export function Home() {
             >
               <div className="relative">
                 <div className="absolute -inset-3 bg-gradient-to-br from-turf/20 via-transparent to-amber/10 rounded-[2rem] blur-2xl" />
-                <div className="relative bg-white rounded-[1.75rem] p-6 md:p-8 shadow-2xl shadow-black/30">
-                  <div className="text-center mb-6">
+                <div className="relative bg-white rounded-[1.75rem] overflow-hidden shadow-2xl shadow-black/30">
+                  <div className="text-center px-6 pt-6 pb-2">
                     <div className="inline-flex items-center gap-2 bg-turf-50 text-turf text-sm font-semibold px-4 py-1.5 rounded-full mb-3">
                       <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-turf opacity-75" />

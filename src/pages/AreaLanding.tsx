@@ -195,8 +195,8 @@ export function AreaLanding() {
             >
               <div className="relative">
                 <div className="absolute -inset-4 bg-turf/20 rounded-3xl blur-2xl" />
-                <div className="relative bg-white rounded-2xl shadow-2xl p-1">
-                  <div className="bg-midnight rounded-t-xl px-6 py-4 flex items-center justify-between">
+                <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+                  <div className="bg-midnight px-6 py-4 flex items-center justify-between">
                     <div>
                       <h3 className="text-white font-bold text-lg">Free Quote for {area.name}</h3>
                       <p className="text-gray-400 text-sm">No obligation, fast response</p>
@@ -209,7 +209,7 @@ export function AreaLanding() {
                       Responding Now
                     </div>
                   </div>
-                  <LeadForm />
+                  <LeadForm compact />
                 </div>
               </div>
             </motion.div>
