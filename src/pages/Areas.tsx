@@ -117,7 +117,7 @@ export function Areas() {
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 As a locally owned and operated business, we understand the unique challenges
                 of maintaining artificial turf in the Mojave Desert. Extreme heat, dust storms,
-                and intense UV exposure require specialized care that national chains simply can't provide.
+                and intense UV exposure require specialized care that national chains simply cannot provide.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
@@ -149,7 +149,7 @@ export function Areas() {
             >
               <h3 className="text-2xl font-bold mb-6">Quick Service Check</h3>
               <p className="text-gray-300 mb-6">
-                Not sure if we service your area? Give us a call and we'll confirm
+                Not sure if we service your area? Give us a call and we will confirm
                 availability and provide a free quote over the phone.
               </p>
               <a

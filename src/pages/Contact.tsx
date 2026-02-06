@@ -85,7 +85,7 @@ export function Contact() {
             className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
             Have questions about our turf cleaning services? Ready to schedule?
-            We're here to help with anything you need.
+            We are here to help with anything you need.
           </motion.p>
         </div>
       </section>
@@ -234,7 +234,7 @@ export function Contact() {
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
                     <p className="text-white/90 leading-relaxed">
-                      Thank you for reaching out. We'll get back to you within 1 hour during business hours.
+                      Thank you for reaching out. We will get back to you within 1 hour during business hours.
                     </p>
                   </div>
                 </div>
@@ -244,7 +244,7 @@ export function Contact() {
                   className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10"
                 >
                   <h2 className="text-2xl font-bold text-midnight mb-1">Send us a Message</h2>
-                  <p className="text-gray-500 mb-8">Fill out the form and we'll be in touch shortly.</p>
+                  <p className="text-gray-500 mb-8">Fill out the form and we will be in touch shortly.</p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                     <div>

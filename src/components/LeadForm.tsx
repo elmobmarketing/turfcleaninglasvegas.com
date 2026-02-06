@@ -62,11 +62,11 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
         </div>
         <h3 className="text-2xl font-black text-midnight mb-2">You're All Set!</h3>
         <p className="text-gray-600 mb-5">
-          We'll contact you within <strong className="text-midnight">1 hour</strong> during business hours with your custom quote.
+          We will contact you within <strong className="text-midnight">1 hour</strong> during business hours with your custom quote.
         </p>
         <p className="text-sm text-gray-400">
           Need it faster? Call{' '}
-          <a href="tel:+17025558873" className="text-turf font-bold hover:underline">(702) 555-TURF</a>
+          <a href="tel:+17028197749" className="text-turf font-bold hover:underline">(702) 819-7749</a>
         </p>
       </motion.div>
     );

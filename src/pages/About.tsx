@@ -57,16 +57,16 @@ export function About() {
               <h2 className="heading-section text-3xl md:text-4xl font-bold text-midnight mb-6">Our Story</h2>
               <div className="space-y-5 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  Turf Cleaning Las Vegas was born from a simple observation: with over
-                  40% of Las Vegas homes now featuring artificial turf, there was a
-                  growing need for specialized cleaning services that understood the
-                  unique challenges of desert living.
+                  Turf Cleaning Las Vegas was born from a simple observation: as more
+                  Las Vegas homes switch to artificial turf, there is a growing need
+                  for specialized cleaning services that understand the unique
+                  challenges of desert living.
                 </p>
                 <p>
                   As pet owners ourselves, we experienced firsthand the struggle of
                   keeping synthetic grass fresh and odor-free in the intense Nevada heat.
                   After trying every DIY solution with disappointing results, we developed
-                  our own proprietary cleaning process specifically designed for the
+                  a professional cleaning process specifically designed for the
                   Las Vegas climate.
                 </p>
                 <p>

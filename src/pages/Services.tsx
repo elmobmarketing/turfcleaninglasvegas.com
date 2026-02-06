@@ -87,7 +87,7 @@ const addons = [
   },
   {
     name: 'Emergency Pet Cleanup',
-    description: 'Urgent odor and waste removal when you need it most. Fast response guaranteed.',
+    description: 'Urgent odor and waste removal when you need it most. Same-day availability.',
     badge: 'Same Day',
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,8 +162,8 @@ export function Services() {
               Choose Your Plan
             </span>
             <h2 className="heading-section">
-              Three tiers, one standard:{' '}
-              <span className="text-gradient">exceptional.</span>
+              Find the right clean{' '}
+              <span className="text-gradient">for your turf.</span>
             </h2>
           </motion.div>
 

@@ -517,6 +517,6 @@ export const serviceAreas: ServiceArea[] = [
   },
 ];
 
-export const PHONE_NUMBER = '(702) 555-TURF';
-export const PHONE_HREF = 'tel:+17025558873';
+export const PHONE_NUMBER = '(702) 819-7749';
+export const PHONE_HREF = 'tel:+17028197749';
 export const EMAIL = 'info@turfcleaninglasvegas.com';

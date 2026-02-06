@@ -228,11 +228,11 @@ export function Home() {
           >
             <span className="section-tag">Our Services</span>
             <h2 className="heading-section text-midnight">
-              Pick your level of clean.
+              Choose the right clean for your turf.
             </h2>
             <p className="text-lg text-gray-500 mt-4 max-w-xl">
-              Three tiers designed for every situation, from routine freshening
-              to full turf restoration.
+              Whether you need a quick refresh or a full restoration, we have a
+              service level that fits your situation and budget.
             </p>
           </motion.div>
 
@@ -542,30 +542,36 @@ export function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="section-tag justify-center">Reviews</span>
+            <span className="section-tag justify-center">Who We Help</span>
             <h2 className="heading-section text-midnight">
-              Don't take our word for it.
+              Turf cleaning for every situation.
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-5">
             {[
               {
-                name: 'Sarah M.',
-                location: 'Summerlin',
-                text: 'Finally found a turf cleaner that actually gets rid of the dog smell! The crew was professional and my backyard looks brand new.',
+                title: 'Pet Owners',
+                text: 'Dogs and cats leave behind odors that build up fast in the Las Vegas heat. We eliminate the smell at the source so your backyard stays fresh between cleanings.',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                ),
               },
               {
-                name: 'Mike R.',
-                location: 'Henderson',
-                text: 'With 3 dogs, our turf was a mess. These guys came out same day and the difference is incredible. Highly recommend!',
+                title: 'Families with Kids',
+                text: 'Your kids play on that turf every day. We use non-toxic, eco-friendly products that kill bacteria and sanitize the surface without leaving harsh chemical residue.',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                ),
               },
               {
-                name: 'Jennifer L.',
-                location: 'North Las Vegas',
-                text: 'Great service, fair pricing, and they really know how to handle the Vegas heat damage on artificial grass. Will use again.',
+                title: 'HOA & Commercial',
+                text: 'Common areas, dog parks, and commercial turf take a beating. We offer scheduled maintenance plans to keep high-traffic areas clean and presentable year-round.',
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                ),
               },
-            ].map((testimonial, index) => (
+            ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -574,27 +580,14 @@ export function Home() {
                 transition={{ delay: index * 0.1 }}
                 className="card-glow bg-white rounded-2xl p-7 border border-gray-100 relative"
               >
-                <div className="absolute top-5 right-6 text-6xl font-serif text-turf/8 leading-none select-none">"</div>
-
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-amber" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+                <div className="w-11 h-11 bg-gradient-to-br from-turf to-turf-light rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-turf/15">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {item.icon}
+                  </svg>
                 </div>
 
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 relative z-10">"{testimonial.text}"</p>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-midnight to-midnight-light flex items-center justify-center text-white font-bold text-xs">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-bold text-midnight text-sm">{testimonial.name}</div>
-                    <div className="text-xs text-gray-400">{testimonial.location}</div>
-                  </div>
-                </div>
+                <h3 className="text-base font-bold text-midnight mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.text}</p>
               </motion.div>
             ))}
           </div>

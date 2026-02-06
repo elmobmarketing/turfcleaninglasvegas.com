@@ -346,7 +346,7 @@ export function AreaLanding() {
               },
               {
                 title: 'Satisfaction Guarantee',
-                desc: 'If you\'re not 100% happy with our turf cleaning results, we\'ll come back and reclean at no additional charge. Your satisfaction is our priority.',
+                desc: 'Not happy with our turf cleaning results? We will come back and reclean at no additional charge. Your satisfaction is our priority.',
                 icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
               },
               {
@@ -414,33 +414,33 @@ export function AreaLanding() {
               viewport={{ once: true }}
               className="bg-midnight rounded-2xl p-8 text-white"
             >
-              <h3 className="text-2xl font-bold mb-6">What {area.name} Customers Say</h3>
+              <h3 className="text-2xl font-bold mb-6">What to Expect in {area.name}</h3>
               <div className="space-y-6">
                 <div className="glass p-5 rounded-xl">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-amber" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-8 bg-turf/20 rounded-lg flex items-center justify-center">
+                      <svg className="w-4 h-4 text-turf-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                    ))}
+                    </div>
+                    <h4 className="text-white font-semibold">Same-Day Availability</h4>
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    "Best turf cleaning service in {area.name}! Our backyard looks brand new after their deep clean. The pet odors are completely gone."
+                    We offer same-day and next-day appointments throughout {area.name} with no extra rush fees. Your quote covers everything.
                   </p>
-                  <p className="text-gray-400 text-xs mt-3">- Verified {area.name} Customer</p>
                 </div>
                 <div className="glass p-5 rounded-xl">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-amber" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-8 bg-turf/20 rounded-lg flex items-center justify-center">
+                      <svg className="w-4 h-4 text-turf-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
-                    ))}
+                    </div>
+                    <h4 className="text-white font-semibold">Satisfaction Guaranteed</h4>
                   </div>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    "They were on time, professional, and the price was exactly what they quoted. Highly recommend for anyone in {area.name}."
+                    Not happy with the results? We will come back and reclean at no additional charge. Transparent pricing with zero hidden fees.
                   </p>
-                  <p className="text-gray-400 text-xs mt-3">- Verified {area.name} Customer</p>
                 </div>
               </div>
             </motion.div>
