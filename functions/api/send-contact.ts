@@ -80,7 +80,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       },
       body: JSON.stringify({
         from: 'Turf Cleaning Las Vegas <onboarding@resend.dev>',
-        to: ['admin@elmobmarketing.com'],
+        to: ['info@sparklyturf.com'],
         subject: `Contact: ${subjectLabel} from ${data.name}`,
         html: htmlBody,
         reply_to: data.email,
