@@ -1,129 +1,112 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { serviceAreas, services, PHONE_NUMBER, PHONE_HREF, EMAIL } from '../data/services';
 import { LeadForm } from '../components/LeadForm';
+import { useSEO } from '../hooks/useSEO';
 
 export function AreaLanding() {
   const { slug } = useParams<{ slug: string }>();
   const area = serviceAreas.find((a) => a.slug === slug);
 
-  useEffect(() => {
-    if (!area) return;
-
-    const localBusinessSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      name: `Turf Cleaning Las Vegas - ${area.name}`,
-      description: area.description,
-      telephone: PHONE_NUMBER,
-      email: EMAIL,
-      url: `https://turfcleaninglasvegas.com/areas/${area.slug}`,
-      areaServed: {
-        '@type': 'Place',
-        name: `${area.name}, Nevada`,
+  const schemas = useMemo(() => {
+    if (!area) return undefined;
+    return [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://turfcleaninglasvegas.com' },
+          { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://turfcleaninglasvegas.com/areas' },
+          { '@type': 'ListItem', position: 3, name: area.name, item: `https://turfcleaninglasvegas.com/areas/${area.slug}` },
+        ],
       },
-      service: services.map((s) => ({
-        '@type': 'Service',
-        name: s.name,
-        description: s.description,
-        offers: {
-          '@type': 'Offer',
-          price: s.price,
-          priceCurrency: 'USD',
+      {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: `Turf Cleaning Las Vegas - ${area.name}`,
+        description: area.description,
+        telephone: PHONE_NUMBER,
+        email: EMAIL,
+        url: `https://turfcleaninglasvegas.com/areas/${area.slug}`,
+        areaServed: {
+          '@type': 'Place',
+          name: `${area.name}, Nevada`,
         },
-      })),
-    };
-
-    const faqSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: `How much does turf cleaning cost in ${area.name}?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `Our ${area.name} turf cleaning services start at $${services[0].price} for a Refresh Clean. Restore Clean starts at $${services[1].price}, and our comprehensive Deep Clean starts at $${services[2].price}. Final pricing depends on your turf area size. We provide free, no-obligation quotes.`,
+        service: services.map((s) => ({
+          '@type': 'Service',
+          name: s.name,
+          description: s.description,
+          offers: {
+            '@type': 'Offer',
+            price: s.price,
+            priceCurrency: 'USD',
           },
-        },
-        {
-          '@type': 'Question',
-          name: `Do you charge travel fees for ${area.name}?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `No! ${area.name} is within our standard service area. There are zero travel fees or surcharges. The price we quote is the price you pay.`,
+        })),
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: `How much does turf cleaning cost in ${area.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Our ${area.name} turf cleaning services start at $${services[0].price} for a Refresh Clean. Restore Clean starts at $${services[1].price}, and our comprehensive Deep Clean starts at $${services[2].price}. Final pricing depends on your turf area size. We provide free, no-obligation quotes.`,
+            },
           },
-        },
-        {
-          '@type': 'Question',
-          name: `How often should I clean my artificial turf in ${area.name}?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `For ${area.name} properties, we recommend a Refresh Clean every 3-4 months for general maintenance. If you have pets, a monthly or bi-monthly Restore Clean keeps odors and bacteria under control. The desert dust in the Las Vegas Valley means more frequent cleaning may be needed after wind events.`,
+          {
+            '@type': 'Question',
+            name: `Do you charge travel fees for ${area.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `No! ${area.name} is within our standard service area. There are zero travel fees or surcharges. The price we quote is the price you pay.`,
+            },
           },
-        },
-        {
-          '@type': 'Question',
-          name: 'Is your turf cleaning safe for pets and kids?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Absolutely. All our cleaning solutions are pet-safe and child-friendly. We use eco-friendly, non-toxic products that effectively eliminate odors and bacteria without harsh chemicals. Your family and pets can use the turf immediately after we finish.',
+          {
+            '@type': 'Question',
+            name: `How often should I clean my artificial turf in ${area.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `For ${area.name} properties, we recommend a Refresh Clean every 3-4 months for general maintenance. If you have pets, a monthly or bi-monthly Restore Clean keeps odors and bacteria under control. The desert dust in the Las Vegas Valley means more frequent cleaning may be needed after wind events.`,
+            },
           },
-        },
-        {
-          '@type': 'Question',
-          name: `Can you clean commercial artificial turf in ${area.name}?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `Yes, we service commercial properties throughout ${area.name} including HOA common areas, business courtyards, apartment complexes, daycares, and sports facilities. We offer custom commercial cleaning plans and volume discounts.`,
+          {
+            '@type': 'Question',
+            name: 'Is your turf cleaning safe for pets and kids?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Absolutely. All our cleaning solutions are pet-safe and child-friendly. We use eco-friendly, non-toxic products that effectively eliminate odors and bacteria without harsh chemicals. Your family and pets can use the turf immediately after we finish.',
+            },
           },
-        },
-        {
-          '@type': 'Question',
-          name: `How do I book a turf cleaning in ${area.name}?`,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: `You can get a free quote by filling out the form on this page, calling us at ${PHONE_NUMBER}, or emailing ${EMAIL}. We offer same-day and next-day appointments throughout ${area.name}.`,
+          {
+            '@type': 'Question',
+            name: `Can you clean commercial artificial turf in ${area.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Yes, we service commercial properties throughout ${area.name} including HOA common areas, business courtyards, apartment complexes, daycares, and sports facilities. We offer custom commercial cleaning plans and volume discounts.`,
+            },
           },
-        },
-      ],
-    };
-
-    const script1 = document.createElement('script');
-    script1.type = 'application/ld+json';
-    script1.text = JSON.stringify(localBusinessSchema);
-    document.head.appendChild(script1);
-
-    const script2 = document.createElement('script');
-    script2.type = 'application/ld+json';
-    script2.text = JSON.stringify(faqSchema);
-    document.head.appendChild(script2);
-
-    document.title = `Turf Cleaning in ${area.name} | Artificial Grass Cleaning ${area.name}, NV`;
-
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute('content', `Professional artificial turf cleaning in ${area.name}, NV. Pet odor removal, deep cleaning & maintenance. Serving ${area.zip}. Free quotes!`);
-    }
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', `https://turfcleaninglasvegas.com/areas/${area.slug}`);
-
-    return () => {
-      document.head.removeChild(script1);
-      document.head.removeChild(script2);
-      document.title = 'Turf Cleaning Las Vegas';
-      if (canonical) {
-        canonical.setAttribute('href', 'https://turfcleaninglasvegas.com');
-      }
-    };
+          {
+            '@type': 'Question',
+            name: `How do I book a turf cleaning in ${area.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `You can get a free quote by filling out the form on this page, calling us at ${PHONE_NUMBER}, or emailing ${EMAIL}. We offer same-day and next-day appointments throughout ${area.name}.`,
+            },
+          },
+        ],
+      },
+    ];
   }, [area]);
+
+  useSEO({
+    title: area ? `Turf Cleaning in ${area.name} | Artificial Grass Cleaning ${area.name}, NV` : 'Turf Cleaning Las Vegas',
+    description: area ? `Professional artificial turf cleaning in ${area.name}, NV. Pet odor removal, deep cleaning & maintenance. Serving ${area.zip}. Free quotes!` : '',
+    canonical: area ? `/areas/${area.slug}` : '/areas',
+    schema: schemas,
+  });
 
   if (!area) return <Navigate to="/areas" replace />;
 

@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
 import { PHONE_NUMBER, PHONE_HREF } from '../data/services';
+import { useSEO } from '../hooks/useSEO';
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -10,6 +12,22 @@ const fadeUp = {
 };
 
 export function About() {
+  const breadcrumbSchema = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://turfcleaninglasvegas.com' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://turfcleaninglasvegas.com/about' },
+    ],
+  }), []);
+
+  useSEO({
+    title: 'About Turf Cleaning Las Vegas | Local Artificial Grass Experts',
+    description: 'Locally owned artificial turf cleaning company in Las Vegas. Desert climate specialists using eco-friendly, pet-safe products. Licensed, insured, and satisfaction guaranteed.',
+    canonical: '/about',
+    schema: breadcrumbSchema,
+  });
+
   return (
     <div>
       {/* Hero */}

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { services, serviceAreas, PHONE_NUMBER, PHONE_HREF } from '../data/services';
 import { LeadForm } from '../components/LeadForm';
+import { useSEO } from '../hooks/useSEO';
 
 function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -50,6 +51,12 @@ const tickerItems = [
 ];
 
 export function Home() {
+  useSEO({
+    title: 'Turf Cleaning Las Vegas | Professional Artificial Grass Cleaning',
+    description: 'Professional artificial turf cleaning in Las Vegas. Pet odor removal, deep cleaning, and maintenance. Safe for kids and pets. Same-day service available. Free quotes - Call (702) 819-7749',
+    canonical: '/',
+  });
+
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,

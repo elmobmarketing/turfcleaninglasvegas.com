@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
 import type { ReactNode } from 'react';
 import { services, PHONE_NUMBER, PHONE_HREF } from '../data/services';
+import { useSEO } from '../hooks/useSEO';
 
 const serviceIcons: Record<string, ReactNode> = {
   refresh: (
@@ -109,6 +111,22 @@ const stagger = {
 };
 
 export function Services() {
+  const breadcrumbSchema = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://turfcleaninglasvegas.com' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://turfcleaninglasvegas.com/services' },
+    ],
+  }), []);
+
+  useSEO({
+    title: 'Turf Cleaning Services Las Vegas | Refresh, Restore & Deep Clean Pricing',
+    description: 'Professional turf cleaning services in Las Vegas starting at $299. Refresh Clean, Restore Clean, and Deep Clean options. Pet odor removal, sanitization, and full restoration. Free quotes.',
+    canonical: '/services',
+    schema: breadcrumbSchema,
+  });
+
   return (
     <div>
       {/* Hero */}

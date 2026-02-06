@@ -24,16 +24,27 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
   const [loading, setLoading] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
+  const [error, setError] = useState('');
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const res = await fetch('/api/send-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    console.log('Lead submitted:', formData);
-    setSubmitted(true);
-    setLoading(false);
+      if (!res.ok) throw new Error('Failed to send');
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please call us at (702) 819-7749 instead.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -285,6 +296,13 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
               placeholder="Turf size, pet issues, specific concerns..."
             />
           </div>
+        </div>
+      )}
+
+      {/* Error */}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">
+          {error}
         </div>
       )}
 

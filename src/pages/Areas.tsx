@@ -1,8 +1,26 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
 import { serviceAreas, PHONE_NUMBER, PHONE_HREF } from '../data/services';
+import { useSEO } from '../hooks/useSEO';
 
 export function Areas() {
+  const breadcrumbSchema = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://turfcleaninglasvegas.com' },
+      { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://turfcleaninglasvegas.com/areas' },
+    ],
+  }), []);
+
+  useSEO({
+    title: 'Turf Cleaning Service Areas | 56 Las Vegas Valley Communities',
+    description: 'Professional turf cleaning in 56 Las Vegas Valley communities. Las Vegas, Henderson, Summerlin, North Las Vegas, and more. Same-day service, no travel fees. Free quotes.',
+    canonical: '/areas',
+    schema: breadcrumbSchema,
+  });
+
   return (
     <div>
       {/* Hero */}

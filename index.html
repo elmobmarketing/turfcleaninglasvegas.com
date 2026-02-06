@@ -11,7 +11,9 @@
     <meta name="geo.placename" content="Las Vegas" />
     <meta name="geo.position" content="36.1699;-115.1398" />
     <meta name="ICBM" content="36.1699, -115.1398" />
+    <meta name="theme-color" content="#059669" />
     <link rel="canonical" href="https://turfcleaninglasvegas.com" />
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Turf Cleaning Las Vegas | Professional Artificial Grass Cleaning" />
@@ -19,12 +21,24 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://turfcleaninglasvegas.com" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://turfcleaninglasvegas.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="900" />
+    <meta property="og:image:alt" content="Professional artificial turf cleaning in Las Vegas - clean, green backyard" />
+    <meta property="og:site_name" content="Turf Cleaning Las Vegas" />
 
-    <!-- Schema.org Local Business -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Turf Cleaning Las Vegas | Professional Artificial Grass Cleaning" />
+    <meta name="twitter:description" content="Las Vegas turf cleaning experts. Pet odor removal, deep cleaning, and maintenance. Safe for kids and pets. Same-day service available." />
+    <meta name="twitter:image" content="https://turfcleaninglasvegas.com/og-image.jpg" />
+
+    <!-- Schema.org LocalBusiness -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://turfcleaninglasvegas.com/#business",
       "name": "Turf Cleaning Las Vegas",
       "image": "https://turfcleaninglasvegas.com/og-image.jpg",
       "description": "Professional artificial turf cleaning services in Las Vegas. Pet odor removal, deep cleaning, and maintenance for residential and commercial properties.",
@@ -43,7 +57,17 @@
       },
       "url": "https://turfcleaninglasvegas.com",
       "telephone": "+1-702-819-7749",
+      "email": "info@turfcleaninglasvegas.com",
       "priceRange": "$$",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Venmo, Zelle",
+      "knowsAbout": [
+        "Artificial turf cleaning",
+        "Synthetic grass maintenance",
+        "Pet odor removal from turf",
+        "Turf sanitization",
+        "Infill replenishment",
+        "Desert climate turf care"
+      ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -69,6 +93,92 @@
         {"@type": "City", "name": "Green Valley"}
       ],
       "sameAs": []
+    }
+    </script>
+
+    <!-- Schema.org Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Artificial Turf Cleaning",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://turfcleaninglasvegas.com/#business"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Nevada"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Turf Cleaning Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Refresh Clean",
+              "description": "Basic maintenance cleaning perfect for regular upkeep of your artificial turf. Includes debris removal, surface brushing, weed removal, visual inspection, and turf decompacting."
+            },
+            "price": "299",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "299",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Restore Clean",
+              "description": "Deep cleaning with odor treatment. Ideal for pet owners and high-traffic areas. Includes pet waste removal, odor elimination, sanitizing, infill redistribution, and power brushing."
+            },
+            "price": "399",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "399",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Deep Clean",
+              "description": "Complete restoration for neglected turf. Includes pressure washing, stain removal, urine extraction, full infill replenishment, drainage optimization, and edge repair inspection."
+            },
+            "price": "699",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "699",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Schema.org WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Turf Cleaning Las Vegas",
+      "url": "https://turfcleaninglasvegas.com",
+      "description": "Professional artificial turf cleaning services in Las Vegas, Nevada.",
+      "publisher": {
+        "@type": "LocalBusiness",
+        "@id": "https://turfcleaninglasvegas.com/#business"
+      }
     }
     </script>
   </head>

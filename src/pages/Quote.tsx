@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { LeadForm } from '../components/LeadForm';
 import { PHONE_NUMBER, PHONE_HREF } from '../data/services';
+import { useSEO } from '../hooks/useSEO';
 
 const faqs = [
   { q: 'How much does turf cleaning cost?', a: 'Our services start at $299 for a basic refresh clean. The exact price depends on your turf size and the level of cleaning needed. We provide free, no-obligation quotes.' },
@@ -12,10 +13,16 @@ const faqs = [
 ];
 
 export function Quote() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
+  const schemas = useMemo(() => [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://turfcleaninglasvegas.com' },
+        { '@type': 'ListItem', position: 2, name: 'Free Quote', item: 'https://turfcleaninglasvegas.com/quote' },
+      ],
+    },
+    {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
       mainEntity: faqs.map((faq) => ({
@@ -26,12 +33,15 @@ export function Quote() {
           text: faq.a,
         },
       })),
-    });
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+    },
+  ], []);
+
+  useSEO({
+    title: 'Free Quote | Turf Cleaning Las Vegas | Artificial Grass Cleaning',
+    description: 'Get a free, no-obligation quote for professional turf cleaning in Las Vegas. Services from $299. Pet odor removal, deep cleaning, and maintenance. Response within 1 hour.',
+    canonical: '/quote',
+    schema: schemas,
+  });
 
   return (
     <div>

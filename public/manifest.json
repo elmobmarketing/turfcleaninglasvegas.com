@@ -1,0 +1,16 @@
+{
+  "name": "Turf Cleaning Las Vegas",
+  "short_name": "Turf Cleaning LV",
+  "description": "Professional artificial turf cleaning in Las Vegas. Pet odor removal, deep cleaning, and maintenance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f2942",
+  "theme_color": "#059669",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

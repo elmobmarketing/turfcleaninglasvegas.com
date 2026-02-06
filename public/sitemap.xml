@@ -1,28 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://turfcleaninglasvegas.com/</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/hero-turf-closeup.webp</image:loc>
+      <image:title>Professional artificial turf cleaning in Las Vegas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/og-image.jpg</image:loc>
+      <image:title>Turf Cleaning Las Vegas - Upscale backyard with clean artificial turf</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://turfcleaninglasvegas.com/services</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/turf-stone-pavers.webp</image:loc>
+      <image:title>Turf cleaning services in Las Vegas</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://turfcleaninglasvegas.com/areas</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/backyard-palm-trees.webp</image:loc>
+      <image:title>Las Vegas Valley turf cleaning service areas</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://turfcleaninglasvegas.com/about</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://turfcleaninglasvegas.com/images/turf/desert-landscape-turf.webp</image:loc>
+      <image:title>About Turf Cleaning Las Vegas</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://turfcleaninglasvegas.com/contact</loc>

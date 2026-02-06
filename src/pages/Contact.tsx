@@ -1,9 +1,26 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import type { FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { PHONE_NUMBER, PHONE_HREF, EMAIL } from '../data/services';
+import { useSEO } from '../hooks/useSEO';
 
 export function Contact() {
+  const breadcrumbSchema = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://turfcleaninglasvegas.com' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://turfcleaninglasvegas.com/contact' },
+    ],
+  }), []);
+
+  useSEO({
+    title: 'Contact Turf Cleaning Las Vegas | Call (702) 819-7749',
+    description: 'Contact Turf Cleaning Las Vegas for a free quote. Call (702) 819-7749, email info@turfcleaninglasvegas.com, or fill out our contact form. We respond within 1 hour.',
+    canonical: '/contact',
+    schema: breadcrumbSchema,
+  });
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,13 +32,27 @@ export function Contact() {
   const [loading, setLoading] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
+  const [error, setError] = useState('');
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log('Contact form:', formData);
-    setSubmitted(true);
-    setLoading(false);
+    setError('');
+
+    try {
+      const res = await fetch('/api/send-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error('Failed to send');
+      setSubmitted(true);
+    } catch {
+      setError('Something went wrong. Please call us at (702) 819-7749 instead.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputWrapper = (field: string) =>
@@ -376,6 +407,12 @@ export function Contact() {
                       />
                     </div>
                   </div>
+
+                  {error && (
+                    <div className="mb-4 bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">
+                      {error}
+                    </div>
+                  )}
 
                   <motion.button
                     type="submit"
