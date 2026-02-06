@@ -116,7 +116,7 @@ export function Services() {
         {/* Hero background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
           <img src="/images/turf/turf-stone-pavers.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-midnight/85" />
+          <div className="absolute inset-0 bg-midnight/65" />
         </div>
 
         {/* Grid pattern overlay */}
@@ -413,7 +413,7 @@ export function Services() {
         {/* Background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
           <img src="/images/turf/putting-green-pool.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-midnight/90" />
+          <div className="absolute inset-0 bg-midnight/70" />
         </div>
         {/* Grid pattern overlay */}
         <div className="grid-pattern" />
