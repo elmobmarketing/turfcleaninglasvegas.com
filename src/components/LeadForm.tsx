@@ -36,26 +36,19 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
 
   if (submitted) {
     return (
-      <div className="bg-vegas-green/10 border border-vegas-green rounded-2xl p-8 text-center">
-        <svg
-          className="w-16 h-16 text-vegas-green mx-auto mb-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+      <div className="bg-gradient-to-br from-turf/10 to-turf/5 border border-turf/20 rounded-2xl p-8 text-center">
+        <div className="w-16 h-16 bg-gradient-to-br from-turf to-turf-light rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-turf/20">
+          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className="text-2xl font-black text-midnight mb-2">Thank You!</h3>
         <p className="text-gray-600 mb-4">
           We've received your request and will contact you within 1 hour during business hours.
         </p>
         <p className="text-sm text-gray-500">
-          Need immediate assistance? Call us at <a href="tel:+17025558873" className="text-vegas-green font-semibold">(702) 555-TURF</a>
+          Need immediate assistance? Call us at{' '}
+          <a href="tel:+17025558873" className="text-turf font-bold hover:underline">(702) 555-TURF</a>
         </p>
       </div>
     );
@@ -65,30 +58,26 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className={compact ? 'space-y-4' : 'grid grid-cols-1 md:grid-cols-2 gap-4'}>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            Name *
-          </label>
+          <label htmlFor="lead-name" className="form-label">Name *</label>
           <input
             type="text"
-            id="name"
+            id="lead-name"
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vegas-green focus:border-transparent"
+            className="form-input"
             placeholder="John Smith"
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-            Phone *
-          </label>
+          <label htmlFor="lead-phone" className="form-label">Phone *</label>
           <input
             type="tel"
-            id="phone"
+            id="lead-phone"
             required
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vegas-green focus:border-transparent"
+            className="form-input"
             placeholder="(702) 555-1234"
           />
         </div>
@@ -96,28 +85,24 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
 
       <div className={compact ? 'space-y-4' : 'grid grid-cols-1 md:grid-cols-2 gap-4'}>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-            Email
-          </label>
+          <label htmlFor="lead-email" className="form-label">Email</label>
           <input
             type="email"
-            id="email"
+            id="lead-email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vegas-green focus:border-transparent"
+            className="form-input"
             placeholder="john@example.com"
           />
         </div>
         <div>
-          <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-1">
-            City/Area *
-          </label>
+          <label htmlFor="lead-city" className="form-label">City/Area *</label>
           <select
-            id="city"
+            id="lead-city"
             required
             value={formData.city}
             onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vegas-green focus:border-transparent"
+            className="form-input"
           >
             <option value="">Select your area</option>
             {serviceAreas.map((area) => (
@@ -131,15 +116,13 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
 
       {!compact && (
         <div>
-          <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
-            Street Address
-          </label>
+          <label htmlFor="lead-address" className="form-label">Street Address</label>
           <input
             type="text"
-            id="address"
+            id="lead-address"
             value={formData.address}
             onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vegas-green focus:border-transparent"
+            className="form-input"
             placeholder="123 Main St"
           />
         </div>
@@ -147,14 +130,12 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
 
       {showService && (
         <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
-            Service Interested In
-          </label>
+          <label htmlFor="lead-service" className="form-label">Service Interested In</label>
           <select
-            id="service"
+            id="lead-service"
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vegas-green focus:border-transparent"
+            className="form-input"
           >
             <option value="">Select a service</option>
             {services.map((service) => (
@@ -169,15 +150,13 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
 
       {!compact && (
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            Additional Details
-          </label>
+          <label htmlFor="lead-message" className="form-label">Additional Details</label>
           <textarea
-            id="message"
+            id="lead-message"
             rows={3}
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vegas-green focus:border-transparent"
+            className="form-input"
             placeholder="Approximate turf size, pet issues, specific concerns..."
           />
         </div>
@@ -186,7 +165,7 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-vegas-green hover:bg-vegas-green/90 disabled:bg-gray-400 text-white font-semibold py-4 px-6 rounded-lg transition-colors text-lg"
+        className="w-full btn-primary text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
       >
         {loading ? (
           <span className="flex items-center justify-center gap-2">
@@ -201,7 +180,7 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
         )}
       </button>
 
-      <p className="text-xs text-gray-500 text-center">
+      <p className="text-xs text-gray-400 text-center">
         By submitting, you agree to receive calls/texts about your quote. We respect your privacy.
       </p>
     </form>

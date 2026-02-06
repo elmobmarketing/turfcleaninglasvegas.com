@@ -4,26 +4,11 @@ import { LeadForm } from '../components/LeadForm';
 import { PHONE_NUMBER, PHONE_HREF } from '../data/services';
 
 const faqs = [
-  {
-    q: 'How much does turf cleaning cost?',
-    a: 'Our services start at $149 for a basic refresh clean. The exact price depends on your turf size and the level of cleaning needed. We provide free, no-obligation quotes.',
-  },
-  {
-    q: 'How long does the cleaning take?',
-    a: 'Most residential cleanings are completed in 1-2 hours. Larger properties or deep cleaning services may take longer. We work efficiently without cutting corners.',
-  },
-  {
-    q: 'Is the cleaning safe for my pets?',
-    a: 'Absolutely! All our products are 100% non-toxic and pet-safe. Your pets can return to the turf as soon as it dries, typically within 30-60 minutes.',
-  },
-  {
-    q: 'Do you offer recurring service plans?',
-    a: 'Yes! We offer monthly, bi-monthly, and quarterly maintenance plans at discounted rates. Regular cleaning extends the life of your turf and keeps odors at bay.',
-  },
-  {
-    q: 'What if the odor comes back?',
-    a: "We stand behind our work with a 100-day odor elimination guarantee. If the smell returns within that period, we'll come back and retreat at no charge.",
-  },
+  { q: 'How much does turf cleaning cost?', a: 'Our services start at $299 for a basic refresh clean. The exact price depends on your turf size and the level of cleaning needed. We provide free, no-obligation quotes.' },
+  { q: 'How long does the cleaning take?', a: 'Most residential cleanings are completed in 1-2 hours. Larger properties or deep cleaning services may take longer. We work efficiently without cutting corners.' },
+  { q: 'Is the cleaning safe for my pets?', a: 'Absolutely! All our products are 100% non-toxic and pet-safe. Your pets can return to the turf as soon as it dries, typically within 30-60 minutes.' },
+  { q: 'Do you offer recurring service plans?', a: 'Yes! We offer monthly, bi-monthly, and quarterly maintenance plans at discounted rates. Regular cleaning extends the life of your turf and keeps odors at bay.' },
+  { q: 'What if the odor comes back?', a: "We stand behind our work with a 100-day odor elimination guarantee. If the smell returns within that period, we'll come back and retreat at no charge." },
 ];
 
 export function Quote() {
@@ -51,43 +36,70 @@ export function Quote() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-vegas-navy text-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="hero-dark relative overflow-hidden py-20 md:py-28 text-white">
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 grid-pattern opacity-10 pointer-events-none" />
+        {/* Floating Orbs */}
+        <div className="absolute top-10 left-[10%] w-72 h-72 bg-turf/20 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 right-[15%] w-96 h-96 bg-turf/10 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber/5 rounded-full blur-3xl" />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-vegas-gold/20 text-vegas-gold px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 glass text-amber px-5 py-2.5 rounded-full text-sm font-semibold mb-8 border border-amber/30"
+            >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
               </svg>
               Response Within 1 Hour
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Get Your Free Quote
-            </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight"
+            >
+              Get Your <span className="text-gradient">Free Quote</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
+            >
               Fill out the form below and we'll provide a customized quote for your
               artificial turf cleaning needs. No obligation, no pressure.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
 
       {/* Form Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 md:py-20 bg-cream">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
             {/* Main Form */}
             <motion.div
-              className="lg:col-span-2"
-              initial={{ opacity: 0, y: 20 }}
+              className="lg:col-span-2 relative"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="bg-white rounded-2xl border border-gray-200 p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              {/* Green glow behind card */}
+              <div className="absolute -inset-4 bg-turf/10 rounded-3xl blur-2xl -z-10" />
+
+              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-midnight mb-2">
                   Request Your Free Quote
                 </h2>
-                <p className="text-gray-600 mb-6">
-                  Tell us about your turf and we'll get back to you with pricing.
+                <p className="text-gray-600 mb-8">
+                  Tell us about your turf and we'll get back to you with a custom pricing estimate.
                 </p>
                 <LeadForm source="quote-page" />
               </div>
@@ -95,20 +107,20 @@ export function Quote() {
 
             {/* Sidebar */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6"
             >
               {/* Call Option */}
-              <div className="bg-vegas-navy text-white rounded-2xl p-6">
-                <h3 className="text-lg font-semibold mb-3">Prefer to Call?</h3>
-                <p className="text-gray-300 text-sm mb-4">
-                  Speak with a turf specialist and get your quote over the phone.
+              <div className="bg-midnight rounded-2xl p-6 text-white">
+                <h3 className="text-lg font-bold mb-2">Prefer to Call?</h3>
+                <p className="text-gray-300 text-sm mb-5 leading-relaxed">
+                  Speak with a turf cleaning specialist and get your quote instantly over the phone.
                 </p>
                 <a
                   href={PHONE_HREF}
-                  className="flex items-center justify-center gap-2 bg-vegas-green text-white px-6 py-3 rounded-xl font-semibold hover:bg-vegas-green/90 transition-colors"
+                  className="btn-shimmer flex items-center justify-center gap-2.5 bg-gradient-to-r from-turf to-turf-light text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-turf/25"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -118,80 +130,111 @@ export function Quote() {
               </div>
 
               {/* What to Expect */}
-              <div className="bg-white rounded-2xl border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">What to Expect</h3>
-                <ul className="space-y-4">
+              <div className="bg-white rounded-2xl shadow-xl p-6">
+                <h3 className="text-lg font-bold text-midnight mb-5">What to Expect</h3>
+                <div className="space-y-0">
                   {[
                     { step: '1', text: 'Submit your information' },
                     { step: '2', text: 'We review your details' },
                     { step: '3', text: 'Receive your custom quote' },
                     { step: '4', text: 'Schedule at your convenience' },
-                  ].map((item) => (
-                    <li key={item.step} className="flex items-center gap-3">
-                      <span className="w-8 h-8 bg-vegas-green/10 text-vegas-green rounded-full flex items-center justify-center font-semibold text-sm">
+                  ].map((item, index) => (
+                    <div key={item.step} className="flex items-start gap-4 relative">
+                      {/* Connecting line */}
+                      {index < 3 && (
+                        <div className="absolute left-[15px] top-9 w-0.5 h-6 bg-turf/20" />
+                      )}
+                      <span className="w-8 h-8 bg-turf text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-md shadow-turf/25">
                         {item.step}
                       </span>
-                      <span className="text-gray-600">{item.text}</span>
-                    </li>
+                      <span className="text-gray-700 font-medium pt-1 pb-5">{item.text}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               {/* Guarantees */}
-              <div className="bg-white rounded-2xl border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Our Guarantees</h3>
-                <ul className="space-y-3">
+              <div className="bg-white rounded-2xl shadow-xl p-6">
+                <h3 className="text-lg font-bold text-midnight mb-4">Our Guarantees</h3>
+                <ul className="space-y-3.5">
                   {[
                     '100-day odor elimination warranty',
                     'No hidden fees or surprises',
                     'Satisfaction guaranteed',
                     'Same-day service available',
                   ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-2 text-gray-600 text-sm">
-                      <svg className="w-5 h-5 text-vegas-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                    <li key={index} className="flex items-center gap-3 text-gray-700 text-sm">
+                      <span className="w-6 h-6 bg-turf/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3.5 h-3.5 text-turf" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Trust Badge */}
-              <div className="bg-vegas-green/10 rounded-2xl p-6 text-center">
-                <div className="flex justify-center gap-1 mb-2">
+              {/* Trust / Rating Badge */}
+              <div className="bg-gradient-to-br from-turf to-turf-light rounded-2xl p-6 text-center text-white shadow-lg shadow-turf/20">
+                <div className="flex justify-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-vegas-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
-                <div className="font-semibold text-gray-900">4.9 Star Rating</div>
-                <div className="text-sm text-gray-600">Based on 347+ reviews</div>
+                <div className="text-2xl font-black">4.9 Star Rating</div>
+                <div className="text-sm text-white/80 mt-1">Based on 347+ reviews</div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 bg-white">
+      {/* FAQ Section */}
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Frequently Asked Questions
-          </h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <span className="text-turf text-sm font-bold uppercase tracking-widest">
+              FAQ
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-midnight mt-3">
+              Frequently Asked Questions
+            </h2>
+          </motion.div>
+
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-xl p-6"
+                transition={{ delay: index * 0.08, duration: 0.4 }}
               >
-                <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <details className="group bg-white rounded-xl border border-gray-200 hover:border-turf/30 hover:shadow-md transition-all duration-300">
+                  <summary className="flex items-center justify-between cursor-pointer px-6 py-5 list-none">
+                    <h3 className="font-bold text-midnight text-left pr-4">{faq.q}</h3>
+                    <svg
+                      className="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-5 -mt-1">
+                    <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                  </div>
+                </details>
               </motion.div>
             ))}
           </div>

@@ -9,19 +9,21 @@ import { Areas } from './pages/Areas';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Quote } from './pages/Quote';
+import { AreaLanding } from './pages/AreaLanding';
 import { NotFound } from './pages/NotFound';
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-gray-50 flex flex-col">
+      <div className="min-h-screen bg-cream flex flex-col">
         <Header />
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/areas" element={<Areas />} />
+            <Route path="/areas/:slug" element={<AreaLanding />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/quote" element={<Quote />} />

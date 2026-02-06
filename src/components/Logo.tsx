@@ -5,66 +5,31 @@ interface LogoProps {
 }
 
 export function Logo({ variant = 'full', className = '', dark = false }: LogoProps) {
-  const navyColor = dark ? '#ffffff' : '#0f2942';
-  const greenColor = '#16a34a';
+  const textColor = dark ? '#ffffff' : '#0a0f1a';
+  const greenColor = '#059669';
 
   const mark = (
     <svg
-      viewBox="0 0 48 48"
+      viewBox="0 0 44 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={variant === 'mark' ? className || 'w-10 h-10' : 'w-10 h-10'}
+      className={variant === 'mark' ? className || 'w-9 h-9' : 'w-9 h-9'}
     >
-      {/* Rounded square background */}
-      <rect width="48" height="48" rx="12" fill={greenColor} />
-
-      {/* Three grass blades rising from bottom */}
-      <path
-        d="M14 38 C14 38, 14 24, 18 16"
-        stroke="white"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M22 38 C22 38, 22 20, 24 10"
-        stroke="white"
-        strokeWidth="2.8"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M30 38 C30 38, 31 26, 34 18"
-        stroke="white"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-
-      {/* Leaf shapes on the blades */}
-      <path
-        d="M18 16 C18 16, 12 18, 11 22 C11 22, 15 20, 18 16Z"
-        fill="white"
-        opacity="0.9"
-      />
-      <path
-        d="M24 10 C24 10, 28 14, 28 18 C28 18, 25 14, 24 10Z"
-        fill="white"
-        opacity="0.9"
-      />
-      <path
-        d="M34 18 C34 18, 38 20, 39 24 C39 24, 36 21, 34 18Z"
-        fill="white"
-        opacity="0.9"
-      />
-
-      {/* Water droplet / sparkle - cleaning element */}
-      <circle cx="37" cy="11" r="4" fill="white" opacity="0.95" />
-      <circle cx="37" cy="11" r="2" fill={greenColor} opacity="0.6" />
-
-      {/* Small sparkle dots */}
-      <circle cx="33" cy="8" r="1" fill="white" opacity="0.7" />
-      <circle cx="41" cy="14" r="1" fill="white" opacity="0.7" />
+      <defs>
+        <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#059669" />
+          <stop offset="100%" stopColor="#10b981" />
+        </linearGradient>
+      </defs>
+      <rect width="44" height="44" rx="12" fill="url(#logoGrad)" />
+      <path d="M13 36 C13 36, 13 22, 17 14" stroke="white" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+      <path d="M20 36 C20 36, 20 18, 22 9" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <path d="M27 36 C27 36, 28 24, 31 16" stroke="white" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+      <path d="M17 14 C17 14, 11 16, 10 20 C10 20, 14 18, 17 14Z" fill="white" opacity="0.85" />
+      <path d="M22 9 C22 9, 26 13, 26 17 C26 17, 23 13, 22 9Z" fill="white" opacity="0.85" />
+      <path d="M31 16 C31 16, 35 18, 36 22 C36 22, 33 19, 31 16Z" fill="white" opacity="0.85" />
+      <circle cx="35" cy="10" r="3" fill="white" opacity="0.9" />
+      <circle cx="32" cy="7" r="1" fill="white" opacity="0.5" />
     </svg>
   );
 
@@ -73,15 +38,15 @@ export function Logo({ variant = 'full', className = '', dark = false }: LogoPro
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
       {mark}
-      <div className="flex flex-col leading-tight">
+      <div className="flex flex-col leading-none">
         <span
-          className="text-[15px] font-extrabold tracking-tight"
-          style={{ color: navyColor }}
+          className="text-[15px] font-black tracking-tight leading-tight"
+          style={{ color: textColor }}
         >
           TURF CLEANING
         </span>
         <span
-          className="text-[11px] font-bold tracking-[0.2em] uppercase"
+          className="text-[10px] font-bold tracking-[0.22em] uppercase mt-0.5"
           style={{ color: greenColor }}
         >
           Las Vegas
