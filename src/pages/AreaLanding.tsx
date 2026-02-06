@@ -417,8 +417,15 @@ export function AreaLanding() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-midnight rounded-2xl p-8 text-white"
+              className="space-y-6"
             >
+              <img
+                src="/images/turf/turf-sports-net.webp"
+                alt={`Clean artificial turf in ${area.name}, Las Vegas`}
+                className="w-full h-56 object-cover rounded-2xl"
+                loading="lazy"
+              />
+              <div className="bg-midnight rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">What to Expect in {area.name}</h3>
               <div className="space-y-6">
                 <div className="glass p-5 rounded-xl">
@@ -447,6 +454,7 @@ export function AreaLanding() {
                     Not happy with the results? We will come back and reclean at no additional charge. Transparent pricing with zero hidden fees.
                   </p>
                 </div>
+              </div>
               </div>
             </motion.div>
           </div>
@@ -574,6 +582,11 @@ export function AreaLanding() {
 
       {/* CTA Section */}
       <section className="hero-dark text-white py-20 relative overflow-hidden">
+        {/* CTA background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img src="/images/turf/putting-green-flag.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-midnight/85" />
+        </div>
         <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-10 right-[20%] w-72 h-72 bg-turf/10 rounded-full blur-3xl animate-float" />

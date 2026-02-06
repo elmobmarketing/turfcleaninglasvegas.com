@@ -7,6 +7,11 @@ export function Areas() {
     <div>
       {/* Hero */}
       <section className="hero-dark text-white overflow-hidden relative">
+        {/* Hero background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img src="/images/turf/backyard-palm-trees.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-midnight/85" />
+        </div>
         <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-[10%] w-72 h-72 bg-turf/10 rounded-full blur-3xl animate-float" />
@@ -145,8 +150,15 @@ export function Areas() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-midnight rounded-2xl p-8 text-white"
+              className="space-y-6"
             >
+              <img
+                src="/images/turf/turf-closeup-wall.webp"
+                alt="Close-up of clean artificial turf in Las Vegas"
+                className="w-full h-56 object-cover rounded-2xl"
+                loading="lazy"
+              />
+              <div className="bg-midnight rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Quick Service Check</h3>
               <p className="text-gray-300 mb-6">
                 Not sure if we service your area? Give us a call and we will confirm
@@ -164,6 +176,7 @@ export function Areas() {
               <p className="text-center text-gray-400 text-sm mt-4">
                 Available Mon-Sat, 7am-7pm
               </p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -204,6 +217,11 @@ export function Areas() {
 
       {/* CTA */}
       <section className="hero-dark text-white py-20 relative overflow-hidden">
+        {/* CTA background image */}
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          <img src="/images/turf/side-yard-turf.webp" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-midnight/85" />
+        </div>
         <div className="absolute inset-0 grid-pattern opacity-[0.03] pointer-events-none" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-10 right-[20%] w-72 h-72 bg-turf/10 rounded-full blur-3xl animate-float" />
