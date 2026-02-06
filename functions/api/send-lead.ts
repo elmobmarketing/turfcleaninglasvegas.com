@@ -92,8 +92,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Turf Cleaning Las Vegas <leads@turfcleaninglasvegas.com>',
-        to: ['info@turfcleaninglasvegas.com'],
+        from: 'Turf Cleaning Las Vegas <onboarding@resend.dev>',
+        to: ['admin@elmobmarketing.com'],
         subject: `New Lead: ${data.name} - ${data.city} (${serviceLabel})`,
         html: htmlBody,
         reply_to: data.email || undefined,
