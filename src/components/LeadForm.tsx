@@ -340,21 +340,21 @@ export function LeadForm({ source = 'website', compact = false, showService = tr
       </AnimatePresence>
 
       <div className={`flex items-center justify-center gap-3 ${compact ? 'pt-0.5' : 'pt-1'}`}>
-        <div className={`flex items-center gap-1 ${compact ? 'text-[10px]' : 'text-xs'} text-gray-400`}>
+        <div className={`flex items-center gap-1 ${compact ? 'text-[11px]' : 'text-xs'} text-gray-400`}>
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
           Secure
         </div>
         <div className="w-0.5 h-0.5 rounded-full bg-gray-300" />
-        <div className={`flex items-center gap-1 ${compact ? 'text-[10px]' : 'text-xs'} text-gray-400`}>
+        <div className={`flex items-center gap-1 ${compact ? 'text-[11px]' : 'text-xs'} text-gray-400`}>
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           Quick Response
         </div>
         <div className="w-0.5 h-0.5 rounded-full bg-gray-300" />
-        <div className={`flex items-center gap-1 ${compact ? 'text-[10px]' : 'text-xs'} text-gray-400`}>
+        <div className={`flex items-center gap-1 ${compact ? 'text-[11px]' : 'text-xs'} text-gray-400`}>
           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>

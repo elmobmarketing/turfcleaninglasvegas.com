@@ -19,7 +19,7 @@ export function Header() {
   }, []);
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `relative px-3 py-2 text-sm font-medium transition-all duration-200 ${
+    `relative px-3 py-3 md:py-2 text-sm font-medium transition-all duration-200 ${
       isActive
         ? 'text-turf'
         : 'text-gray-500 hover:text-midnight'

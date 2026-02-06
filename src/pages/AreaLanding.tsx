@@ -409,35 +409,35 @@ export function AreaLanding() {
                 loading="lazy"
               />
               <div className="bg-midnight rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">What to Expect in {area.name}</h3>
-              <div className="space-y-6">
-                <div className="glass p-5 rounded-xl">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 bg-turf/20 rounded-lg flex items-center justify-center">
-                      <svg className="w-4 h-4 text-turf-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                <h3 className="text-2xl font-bold mb-6">What to Expect in {area.name}</h3>
+                <div className="space-y-6">
+                  <div className="glass p-5 rounded-xl">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 bg-turf/20 rounded-lg flex items-center justify-center">
+                        <svg className="w-4 h-4 text-turf-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <h4 className="text-white font-semibold">Same-Day Availability</h4>
                     </div>
-                    <h4 className="text-white font-semibold">Same-Day Availability</h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      We offer same-day and next-day appointments throughout {area.name} with no extra rush fees. Your quote covers everything.
+                    </p>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    We offer same-day and next-day appointments throughout {area.name} with no extra rush fees. Your quote covers everything.
-                  </p>
-                </div>
-                <div className="glass p-5 rounded-xl">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 bg-turf/20 rounded-lg flex items-center justify-center">
-                      <svg className="w-4 h-4 text-turf-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
+                  <div className="glass p-5 rounded-xl">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 bg-turf/20 rounded-lg flex items-center justify-center">
+                        <svg className="w-4 h-4 text-turf-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <h4 className="text-white font-semibold">Satisfaction Guaranteed</h4>
                     </div>
-                    <h4 className="text-white font-semibold">Satisfaction Guaranteed</h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      Not happy with the results? We will come back and reclean at no additional charge. Transparent pricing with zero hidden fees.
+                    </p>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Not happy with the results? We will come back and reclean at no additional charge. Transparent pricing with zero hidden fees.
-                  </p>
                 </div>
-              </div>
               </div>
             </motion.div>
           </div>
