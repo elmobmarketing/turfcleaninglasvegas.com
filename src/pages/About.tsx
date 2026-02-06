@@ -17,7 +17,7 @@ export function About() {
         {/* Hero background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
           <img src="/images/turf/desert-landscape-turf.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-midnight/65" />
+          <div className="absolute inset-0 bg-midnight/85" />
         </div>
 
         {/* Grid pattern overlay */}

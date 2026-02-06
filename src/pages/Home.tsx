@@ -69,7 +69,7 @@ export function Home() {
             alt=""
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-midnight/80 via-midnight/65 to-midnight/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-midnight/95 via-midnight/85 to-midnight/70" />
         </div>
 
         {/* Animated orbs */}
@@ -657,7 +657,7 @@ export function Home() {
             alt=""
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-midnight/70" />
+          <div className="absolute inset-0 bg-midnight/90" />
         </div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 2 }}>
           <div className="orb w-96 h-96 bg-turf/10 top-[-10%] left-[20%] animate-float-slow" />
