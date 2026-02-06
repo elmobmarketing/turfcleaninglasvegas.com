@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { PHONE_NUMBER, PHONE_HREF } from '../../data/services';
+import { Logo } from '../Logo';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,26 +31,13 @@ export function Header() {
 
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-vegas-green rounded-lg flex items-center justify-center">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                />
-              </svg>
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold text-vegas-navy">Las Vegas</span>
-              <span className="text-xl font-bold text-vegas-green"> Turf Cleaning</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <span className="hidden sm:block">
+              <Logo variant="full" />
+            </span>
+            <span className="sm:hidden">
+              <Logo variant="mark" />
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
