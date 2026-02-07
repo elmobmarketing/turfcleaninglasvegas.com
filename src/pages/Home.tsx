@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef, useEffect, useState, useMemo } from 'react';
 import { services, serviceAreas, PHONE_NUMBER, PHONE_HREF, EMAIL } from '../data/services';
 import { LeadForm } from '../components/LeadForm';
@@ -94,18 +94,10 @@ export function Home() {
     schema: schemas,
   });
 
-  const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  });
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   return (
     <div>
       {/* Hero */}
-      <section ref={heroRef} className="hero-dark min-h-[100vh] flex flex-col justify-center text-white overflow-hidden relative">
+      <section className="hero-dark min-h-[100vh] flex flex-col justify-center text-white overflow-hidden relative">
         {/* Hero background image */}
         <div className="absolute inset-0" style={{ zIndex: 1 }}>
           <img
@@ -126,10 +118,8 @@ export function Home() {
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 grid-pattern opacity-20 pointer-events-none" style={{ zIndex: 2 }} />
 
-        <motion.div
-          style={{ y: heroY, opacity: heroOpacity }}
+        <div
           className="max-w-6xl mx-auto px-4 py-20 md:py-0 relative"
-          initial={false}
         >
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center" style={{ zIndex: 10, position: 'relative' }}>
             {/* Left */}
@@ -221,7 +211,7 @@ export function Home() {
               </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Social Proof Ticker */}
