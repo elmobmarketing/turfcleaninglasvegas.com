@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 
 export function NotFound() {
+  useSEO({
+    title: 'Page Not Found | Turf Cleaning Las Vegas',
+    description: 'The page you are looking for could not be found. Visit our homepage for professional artificial turf cleaning services in Las Vegas.',
+    canonical: '/404',
+  });
+
   return (
     <div className="min-h-[60vh] flex items-center justify-center bg-cream">
       <div className="text-center px-4">

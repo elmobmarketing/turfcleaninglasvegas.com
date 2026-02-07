@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
-import { services, serviceAreas, PHONE_NUMBER, PHONE_HREF } from '../data/services';
+import { useRef, useEffect, useState, useMemo } from 'react';
+import { services, serviceAreas, PHONE_NUMBER, PHONE_HREF, EMAIL } from '../data/services';
 import { LeadForm } from '../components/LeadForm';
 import { useSEO } from '../hooks/useSEO';
 
@@ -51,10 +51,47 @@ const tickerItems = [
 ];
 
 export function Home() {
+  const schemas = useMemo(() => [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'Turf Cleaning Las Vegas',
+      description: 'Professional artificial turf cleaning in Las Vegas. Pet odor removal, deep cleaning, and maintenance. Safe for kids and pets. Same-day service available.',
+      url: 'https://turfcleaninglasvegas.com',
+      telephone: '+17028197749',
+      email: EMAIL,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Las Vegas',
+        addressRegion: 'NV',
+        addressCountry: 'US',
+      },
+      areaServed: serviceAreas.map(area => ({
+        '@type': 'City',
+        name: area.name,
+      })),
+      priceRange: '$$',
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '07:00',
+        closes: '18:00',
+      },
+      image: 'https://turfcleaninglasvegas.com/og-image.jpg',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Turf Cleaning Las Vegas',
+      url: 'https://turfcleaninglasvegas.com',
+    },
+  ], []);
+
   useSEO({
     title: 'Turf Cleaning Las Vegas | Professional Artificial Grass Cleaning',
     description: 'Professional artificial turf cleaning in Las Vegas. Pet odor removal, deep cleaning, and maintenance. Safe for kids and pets. Same-day service available. Free quotes - Call (702) 819-7749',
     canonical: '/',
+    schema: schemas,
   });
 
   const heroRef = useRef(null);
