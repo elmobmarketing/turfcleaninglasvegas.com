@@ -221,9 +221,7 @@ export function BlogPost() {
                     )}
 
                     {section.content.map((paragraph, pIdx) => (
-                      <p key={pIdx} className="text-gray-600 leading-relaxed mb-4">
-                        {paragraph}
-                      </p>
+                      <p key={pIdx} className="text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: paragraph }} />
                     ))}
 
                     {section.listItems && (
