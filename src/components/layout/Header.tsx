@@ -34,12 +34,7 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-[4.25rem]">
           <Link to="/" className="flex items-center relative z-10">
-            <span className="hidden sm:block">
-              <Logo variant="full" />
-            </span>
-            <span className="sm:hidden">
-              <Logo variant="mark" />
-            </span>
+            <Logo variant="full" />
           </Link>
 
           {/* Desktop Nav */}
